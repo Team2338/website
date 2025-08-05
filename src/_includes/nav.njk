@@ -1,0 +1,44 @@
+<nav>
+    <span class="nav_left">
+        <img src="/static/img/MiniLogo-256.png" alt="2338 Logo" class="nav_left_logo">
+        <a href="/">Gear it Forward Team 2338</a>
+    </span>
+    <ul class="nav_right">
+        <li class="nav_item">
+            <a href="/" class="nav_item_link">Home</a>
+        </li>
+        <li class="nav_item">
+            <a href="/outreach" class="nav_item_link">Outreach</a>
+        </li>
+        <li class="nav_item">
+            <a href="/resources" class="nav_item_link">Resources</a>
+        </li>
+        <li class="nav_item">
+            <a href="/our-team" class="nav_item_link">Our team</a>
+        </li>
+        <li class="nav_item">
+            <a href="/contact" class="nav_item_link">Contact</a>
+        </li>
+    </ul>
+    {#TODO: focusable/keyboard tabindex?#}
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</nav>
+
+<script>
+    const navToggle = document.querySelector("#mobile-menu");
+    const navList = document.querySelector(".nav_right");
+
+    navToggle.addEventListener('click', () => {
+        console.log("here");
+        navToggle
+            .classList
+            .toggle("menu-toggle--active");
+        navList
+            .classList
+            .toggle('nav_right--open');
+    });
+</script>

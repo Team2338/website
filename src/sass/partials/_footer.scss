@@ -1,0 +1,54 @@
+@use "_vars.scss" as *;
+
+.footer {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding-inline: 1em;
+
+	@media only screen and (width < $tablet_breakpoint) {
+		grid-template-columns: 1fr;
+		gap: 1em;
+		text-align: center;
+	}
+
+	background: $blue;
+	color: white;
+
+	&__list {
+		display: flex;
+		justify-content: space-evenly;
+		height: 1.5em;
+		max-width: 300px;
+		margin: auto;
+		padding: 0;
+
+		list-style-type: none;
+
+		&__item {
+			&__icon {
+				fill: white;
+				height: 100%;
+
+				transition: fill 0.25s ease;
+
+				&:hover,
+				&:focus {
+					fill: $orange;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	&__right {
+		text-align: right;
+
+		@media only screen and (width < $tablet_breakpoint) {
+			text-align: center;
+		}
+
+		&__link {
+			color: white;
+		}
+	}
+}
