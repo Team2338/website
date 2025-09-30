@@ -21,9 +21,14 @@
 	&__subtitle {
 		text-shadow: 0px 0px 10px black;
 	}
+	
 
 	&__subtitle {
 		font-weight: 600;
+	}
+	&__typewriter {
+		font-weight: 300;
+		text-shadow: 0px 0px 10px black;
 	}
 }
 
@@ -50,6 +55,9 @@
 
 	&__subtitle {
 		font-size: 200%;
+	}
+	&__typewriter {
+		font-size: 100%;
 	}
 }
 
@@ -185,7 +193,7 @@
 		}
 
 		&:after {
-			content: "test123";
+			content: " ";
 			display: inline-block;
 			position: absolute;
 			inset: 0;
