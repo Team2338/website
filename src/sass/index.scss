@@ -1,0 +1,48 @@
+@use "partials/vars" as *;
+
+.hero {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	color: white;
+	// font-size: 150%;
+	font-size: clamp(1rem, 1.5vw, 200%);
+
+	@media (width < $mid_breakpoint) {
+		grid-template-columns: 1fr;
+		padding-left: 3em;
+	}
+
+	&__left {
+		max-width: 35vw;
+		margin: auto;
+	}
+
+	&__right {
+		align-self: center;
+	}
+}
+
+.section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	color: white;
+	font-size: 110%;
+	margin-block: 1em;
+
+	@media (width < $mid_breakpoint) {
+		grid-template-columns: 1fr;
+		padding-inline: 3em;
+	}
+
+	&__subtitle {
+		font-size: 200%;
+	}
+
+	@media (width > $mid_breakpoint) {
+		//left and right
+		& > div {
+			margin: auto;
+			max-width: 35vw;
+		}
+	}
+}

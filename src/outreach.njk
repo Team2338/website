@@ -1,0 +1,56 @@
+---
+layout: base.njk
+css: outreach.css
+---
+<header class="hero">
+    <h1 class="hero__title">Outreach</h1>
+    <p class="hero__subtitle">at Gear It Forward</p>
+</header>
+<section class="section">
+    <div class="section__left">
+        <h1 class="section__title">What is <span class="orange">Outreach</span>?</h1>
+        <p class="section__text">Outreach is one of the great opportunities available on the team. Outreach has an overall job to use our robotics skills to better the community. We have many outreach iniatives detailed below!
+</p>
+    </div>
+    <div class="section__right">
+        <img src="/static/img/Outreach/Outreach.jpg" alt="" class="section__img">
+    </div>
+</section>
+<section class="initiatives">
+    <h3 class="initiatives__title">Our <span class="orange">Outreach</span> Initiatives</h3>
+
+    <div class="initiatives__container">
+        {% for initiative in outreach.initiatives %}
+            <div class="initiatives__item">
+                <div class="initiatives__item__overlay">
+                    <h3 class="initiatives__item__overlay__title">{{initiative.name}}</h3>
+                    <button class="initiatives__item__overlay__button" data-index="{{loop.index}}">Learn More</button>
+                </div>
+                <img src="{{initiative.image}}" alt="{{initiatives.alt}}" class="initiatives__item__img">
+            </div>
+            <dialog class="initiatives__popup" id="popup-{{loop.index}}" closedby="any">
+                <div class="initiatives__popup__upper">
+                    <h4 class="initiatives__popup__title">{{initiative.name}}</h4>
+                    <form method="dialog">
+                        <button autofocus class="initiatives__popup__close" data-index="{{loop.index}}">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(254, 80, 0)"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                        </button>
+                    </form>
+                </div>
+                {{initiative.paragraph | md | safe}}
+            </dialog>
+        {% endfor %}
+    </div>
+    <script>
+        const container = document.querySelector(".initiatives__container");
+        //One event listener to simply and increase performance
+        container.addEventListener("click", (e) => {
+            let el = e.target;
+            if (el.tagName === "BUTTON" && el.dataset.index) {
+                document
+                    .querySelector(`#popup-${el.dataset.index}`)
+                    .showModal();
+            }
+        });
+    </script>
+</section>

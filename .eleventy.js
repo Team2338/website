@@ -1,4 +1,5 @@
 import yaml from "js-yaml";
+import mdIt from "markdown-it";
 
 export default async eleventyConfig => {
 	eleventyConfig.addPassthroughCopy("src/static");
@@ -9,6 +10,14 @@ export default async eleventyConfig => {
 	eleventyConfig.browserSyncConfig = {
 		https: true,
 	};
+
+	const md = new mdIt({
+		html: true,
+	});
+
+	eleventyConfig.addFilter("md", content => {
+		return md.render(content);
+	});
 
 	return {
 		dir: {

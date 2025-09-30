@@ -4,15 +4,16 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	padding-inline: 1em;
+	margin-block: 2em;
+
+	background: $blue;
+	color: white;
 
 	@media only screen and (width < $tablet_breakpoint) {
 		grid-template-columns: 1fr;
 		gap: 1em;
 		text-align: center;
 	}
-
-	background: $blue;
-	color: white;
 
 	&__list {
 		display: flex;

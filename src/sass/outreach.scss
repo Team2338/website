@@ -1,0 +1,207 @@
+@use "partials/vars" as *;
+
+.hero {
+	text-align: center;
+	font-size: clamp(2.25rem, 4vw, 5rem);
+
+	color: white;
+	background-image: url("/static/img/Outreach/IMG_6258.jpg");
+	background-size: 100%;
+	background-position: center;
+	background-size: cover;
+	height: calc(100vh - $nav_height);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	margin-bottom: 2em;
+
+	&__title,
+	&__subtitle {
+		text-shadow: 0px 0px 10px black;
+	}
+
+	&__subtitle {
+		font-weight: 600;
+	}
+}
+
+.section {
+	color: white;
+	font-size: 110%;
+	margin-bottom: 2em;
+
+	@media (width > $mid_breakpoint) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	//left and right
+	& > div {
+		max-width: clamp(35vw, 45vw, 50vw);
+		margin: auto;
+
+		@media (width < $mid_breakpoint) {
+			max-width: 75vw;
+			margin-bottom: 1em;
+		}
+	}
+
+	&__subtitle {
+		font-size: 200%;
+	}
+}
+
+.initiatives {
+	&__title {
+		color: white;
+		text-align: center;
+		margin-bottom: 1em;
+		font-size: 200%;
+	}
+
+	&__container {
+		--columns: 3;
+		display: grid;
+		grid-template-columns: repeat(var(--columns), 1fr);
+		gap: 1em;
+		max-width: 75vw;
+		margin: auto;
+
+		@media (width < $tablet_breakpoint) {
+			--columns: 2;
+		}
+
+		@media (width < $mid_breakpoint) {
+			--columns: 1;
+		}
+	}
+
+	&__popup {
+		top: 1em;
+		margin-inline: auto;
+		font-size: 120%;
+
+		//TODO: Is this instance of a defined width bad?
+		width: clamp(200px, 75%, 750px);
+		background: $blue;
+		color: white;
+
+		&::backdrop {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		&__upper {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__close {
+			color: orange;
+			border: none;
+			background-color: transparent;
+			transition: rotate 0.25s ease-in-out;
+
+			&:hover {
+				rotate: 180deg;
+			}
+		}
+
+		svg {
+			cursor: pointer;
+		}
+
+		a {
+			color: $orange;
+		}
+	}
+
+	&__item {
+		position: relative;
+
+		&__overlay {
+			color: white;
+			opacity: 0;
+			position: absolute;
+			inset: 0;
+			z-index: 200;
+			transition: opacity 0.2s ease-out;
+			font-size: 150%;
+			text-align: center;
+			padding-top: 1em;
+
+			&__title,
+			&__button {
+				transform: translateY(-0.5em);
+				transition: transform 0.2s ease-in-out;
+			}
+
+			&__button {
+				background: $orange;
+				border: none;
+				border-radius: 50px;
+				padding-inline: 0.5em;
+				cursor: pointer;
+				margin-top: 1em;
+			}
+		}
+
+		@media (hover: hover) {
+			&:hover:after {
+				opacity: 60%;
+				padding: 0;
+			}
+
+			&:hover &__overlay {
+				opacity: 100%;
+
+				&__title,
+				&__button {
+					transform: translate(0);
+				}
+			}
+		}
+
+		@media (hover: none) {
+			&__overlay {
+				opacity: 100%;
+				display: flex;
+				flex-direction: column;
+				flex-shrink: 1;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0.5em;
+
+				&__title {
+					text-shadow: 2px 2px 10px black;
+				}
+
+				&__title,
+				&__button {
+					transform: none;
+				}
+			}
+		}
+
+		&:after {
+			content: "test123";
+			display: inline-block;
+			position: absolute;
+			inset: 0;
+			background-color: black;
+			opacity: 0%;
+			width: 100%;
+			height: 100%;
+			z-index: 111;
+			transition: opacity 0.2s ease-in;
+		}
+
+		&__img {
+			display: block;
+			height: 100%;
+			object-fit: cover;
+			position: relative;
+		}
+	}
+}

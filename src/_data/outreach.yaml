@@ -1,0 +1,25 @@
+initiatives:
+    - name: C.H.U.C.K.
+      image: /static/img/Outreach/IMG_6258.jpg
+      alt: "Congressman Bill Foster with a group of 2338 Students delivering a CHUCK"
+      paragraph: "Our Community Helping Utility Companion for Kickball is a device that we developed to increase equity in adaptive PE classes for students with limited mobility."
+    - name: "Adaptive Toys"
+      image: /static/img/Outreach/Outreach.jpg
+      alt: "A group of 2338 students standing behind a table of adaptive toys"
+      paragraph: "We adapt toys by soldering an easy-press button onto them to provide equity and inclusivity to students with limited mobility."
+    - name: "STEM Kits"
+      image: /static/img/Outreach/2024StemKits.jpg
+      alt: Gear it Forward students assembling STEM Kits
+      paragraph: "Supplying Hand-on Science to English Language Learner students at Title I Schools. If you are interested in sponsoring our efforts to provide hands-on science to young kids, please [contact us](/contact)."
+    - name: "Girls Who Stem"
+      image: /static/img/Outreach/gwhostem.jpg
+      alt: "A group of girls at one of Gear It Forward's Girl's Who Stem meetings"
+      paragraph: "We host monthly meetings that empower girls in FIRST and support them as they mentor the younger generation of STEM leaders."
+    - name: "Girl Scout Workshop"
+      image: /static/img/Outreach/jacker.png
+      alt: "A group of girl scouts attending 2338's Girl Scout Workshop:"
+      paragraph: "Introducing local girl scouts grades 3-5 to STEM and FIRST Robotics by teaching skills such as using hand tools, power tools, driving the robot, and educating them about available FLL programs."
+    - name: "Winter Stem Camp"
+      image: /static/img/Outreach/morestuff.png
+      alt: "Young girls participating in the Gear it Forward Winter STEM Camp"
+      paragraph: "Introducing girls grades 6-8 to STEM and FIRST Lego League by hosting them at our shop and providing mentorship."
