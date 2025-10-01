@@ -1,146 +1,141 @@
 @use "./_vars.scss" as *;
 
 nav {
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	//3em is the image height
-	padding: calc(($nav_height - 3em) * 0.5) 2em;
-	height: $nav_height;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: calc(($nav_height - 3em) * 0.5) 2em;
+  height: $nav_height;
+  background: $blue;
+  color: white;
+  margin-bottom: 1rem;
 
-	background: $blue;
+  @media (max-width: $tablet_breakpoint) {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2em;
+    padding-block: 0.5em;
+  }
 
-	color: white;
+  .nav_left {
+    display: flex;
+    gap: 1em;
+    align-items: center;
 
-	@media (width < $tablet_breakpoint) {
-		display: flex;
-		justify-content: space-between;
-		padding: 0;
-		padding-block: 0.5em;
+    img {
+      max-width: 3em;
+      max-height: 3em;
+      aspect-ratio: 1/1;
+    }
 
-		.nav_left {
-			margin-left: 0.75em;
-		}
-	}
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 125%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
 
-	.nav_left {
-		//for the margin:auto to verticaly center the text
-		display: flex;
-		gap: 1em;
+  .nav_right {
+    display: flex;
+    gap: 1em;
+    justify-self: end;
+    list-style: none;
 
-		img {
-			max-width: 3em;
-			max-height: 3em;
-			display: inline;
-			aspect-ratio: 1/1;
-			margin-block: auto;
-		}
-		a {
-			display: inline;
-			margin-block: auto;
+    transition: transform 0.45s ease, opacity 0.35s ease;
 
-			text-decoration: none;
-			color: white;
-			font-size: 125%;
-		}
-	}
+    @media (max-width: $tablet_breakpoint) {
+      flex-direction: column;
+      position: fixed;
+      top: $nav_height;
+      width: 100%;
+      height: calc(100vh - $nav_height);
+      background-color: $blue;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transform: translateX(-110%);
+      opacity: 0;
+      overflow: hidden;
+      transition: transform 0.45s ease, opacity 0.35s ease;
+    }
 
-	.nav_right {
-		display: flex;
-		gap: 1em;
-		justify-self: end;
+    &.nav_right--open {
+      transform: translateX(0);
+      opacity: 1;
+    }
 
-		list-style: none;
+    li {
+      display: flex;
+    }
 
-		transition: transform 0.5s ease-in-out;
+    a {
+      display: inline-flex; // allows smooth border/background transitions
+      align-items: center;
+      justify-content: center;
+      font-size: 110%;
+      padding: 0.5em 0.75em;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      text-decoration: none;
+      color: white;
+      background-color: transparent;
+      transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 
-		@media screen and (width < $tablet_breakpoint) {
-			display: flex;
-			flex-direction: column;
-			position: fixed;
-			justify-content: center;
-			align-items: center;
-			top: $nav_height;
-			background-color: $blue;
-			width: 100%;
-			height: calc(100vh - $nav_height);
-			transform: translate(-110%);
-			text-align: center;
-			overflow: hidden;
-		}
+      @media (max-width: $tablet_breakpoint) {
+        font-size: 150%;
+      }
 
-		&.nav_right--open {
-			transform: translate(0%);
-		}
+      &:hover,
+      &:focus-visible,
+      &:focus-within {
+        outline: none;
+        border-color: $orange;
+        background-color: rgba($orange, 0.1); // subtle fade
+        color: $orange;
+        transform: translateY(-2px); // optional lift effect
+      }
+    }
+  }
 
-		li {
-			display: flex;
-		}
+  .menu-toggle {
+    display: none;
+    justify-self: end;
+    margin-right: 25px;
+    margin-block: auto;
 
-		a {
-			text-decoration: none;
-			color: white;
-			margin-block: auto;
-			text-align: center;
-			font-size: 110%;
-			padding: 0.5em 0.75em;
-			//So that the nav doesn't change size on hover
-			border: 2px solid transparent;
-			border-radius: 10px;
+    @media (max-width: $tablet_breakpoint) {
+      display: block;
+    }
 
-			@media (width < $tablet_breakpoint) {
-				font-size: 150%;
-			}
+    &:hover {
+      cursor: pointer;
+    }
 
-			&:hover,
-			&:focus-visible,
-			&:focus-within {
-				outline: none;
-				border-color: $orange;
-			}
-		}
-	}
-	.menu-toggle {
-		justify-self: end;
-		margin-right: 25px;
-		margin-block: auto;
-		display: none;
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+    }
+  }
 
-		@media (width < $tablet_breakpoint) {
-			display: block;
-		}
+  #mobile-menu.menu-toggle--active .bar:nth-child(2) {
+    opacity: 0;
+  }
 
-		&:hover {
-			cursor: pointer;
-		}
+  #mobile-menu.menu-toggle--active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
 
-		.bar {
-			display: block;
-			width: 25px;
-			height: 3px;
-			background-color: white;
-			margin: 5px auto;
-			-webkit-transition: all 0.3s ease-in-out;
-			-o-transition: all 0.3s ease-in-out;
-			transition: all 0.3s ease-in-out;
-		}
-	}
-
-	//Stole entire nav from https://codepen.io/bowersrd/pen/dwXLba?editors=1100
-	#mobile-menu.menu-toggle--active .bar:nth-child(2) {
-		opacity: 0;
-	}
-
-	#mobile-menu.menu-toggle--active .bar:nth-child(1) {
-		-webkit-transform: translateY(8px) rotate(45deg);
-		-ms-transform: translateY(8px) rotate(45deg);
-		-o-transform: translateY(8px) rotate(45deg);
-		transform: translateY(8px) rotate(45deg);
-	}
-
-	#mobile-menu.menu-toggle--active .bar:nth-child(3) {
-		-webkit-transform: translateY(-8px) rotate(-45deg);
-		-ms-transform: translateY(-8px) rotate(-45deg);
-		-o-transform: translateY(-8px) rotate(-45deg);
-		transform: translateY(-8px) rotate(-45deg);
-	}
+  #mobile-menu.menu-toggle--active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }
