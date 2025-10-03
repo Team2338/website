@@ -1,0 +1,120 @@
+@use "partials/vars" as *;
+
+.null {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    a {
+        color: rgb(250, 249, 246);
+        font-weight: 500;
+        transition: 0.3s ease;
+        text-decoration: underline;
+        
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    
+    .Content {
+        width: 100%;
+        max-width: 800px;
+        padding: 2rem;
+        
+        .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+            .wrapper {
+                .mini {
+                    font-size: clamp(2rem, 5vw, 3.5rem);
+                    color: $offwhite;
+                    padding: 1vh;
+                    margin-bottom: 1rem;
+                    
+                    span {
+                        display: inline-block;
+                    }
+                }
+                
+                .extraMini {
+                    font-size: clamp(1rem, 2.5vw, 1.25rem);
+                    font-weight: 300;
+                    color: $grey;
+                    line-height: 2em;
+                    
+                    #dad-joke {
+                        display: block;
+                        margin-top: 1rem;
+                        font-style: italic;
+                        color: lighten($grey, 10%);
+                    }
+                }
+                
+                svg {
+                    position: absolute;
+                    padding-right: 5vw;
+                    opacity: 0.125;
+                    scale: 0.97;
+                }
+            }
+            
+            .buttons {
+                margin-top: 2rem;
+                
+                .db {
+                    margin: 1rem;
+                }
+            }
+        }
+    }
+    
+    @media (width < $mid_breakpoint) {
+        min-height: 70vh;
+        
+        .Content {
+            padding: 1.5rem;
+            
+            .right {
+                .wrapper {
+                    .mini {
+                        padding: 2vh 1vh;
+                        margin-top: 1vh;
+                        margin-bottom: 2vh;
+                    }
+                    
+                    .extraMini {
+                        line-height: 1.8em;
+                        padding: 1vh 0;
+                        
+                        br {
+                            display: block;
+                            content: "";
+                            margin: 0.5rem 0;
+                        }
+                        
+                        .extraDad {
+                            font-size: 1.1rem;
+                            font-weight: 300;
+                            color: $grey;
+                            line-height: 1.8em;
+                            padding: 1vh 0;
+                        }
+                    }
+                }
+                
+                .buttons {
+                    margin-top: 1.5rem;
+                    
+                    .db {
+                        margin: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

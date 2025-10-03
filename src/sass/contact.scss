@@ -1,0 +1,134 @@
+@use "partials/vars" as *;
+
+.intro {
+    height: 20vh !important;
+    
+    .content {
+        .left {
+            flex: 0.6 1;
+            overflow: hidden;
+            justify-content: center;
+            display: flex;
+            
+            .wrapper {
+                h1 {
+                    span {
+                        color: $orange;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-form {
+    margin-left: 16rem;
+    margin-right: 16rem;
+    background: $offblue;
+    border-radius: 3vh;
+    padding: 3rem 4rem 3rem 3.5rem;
+    display: flex;
+    
+    .left {
+        border-right: 0.5px solid $orange;
+        padding-right: 4rem;
+        
+        .details {
+            text-align: center;
+            
+            .icon {
+                color: $orange !important;
+            }
+            
+            .title {
+                letter-spacing: 0.9px;
+            }
+            
+            .detail {
+                color: $grey;
+                font-size: 13px;
+                margin-top: 4px;
+            }
+        }
+        
+        .location {
+            margin-top: 2.9rem;
+        }
+    }
+    
+    .right {
+        .form {
+            padding-left: 3rem;
+            
+            .form-label {
+                font-size: 16px;
+                font-weight: 300;
+                letter-spacing: 0.5px;
+            }
+            
+            .form-div {
+                margin-bottom: 2rem;
+                align-items: center;
+                justify-content: center;
+                
+                .form-label {
+                    font-size: 16px;
+                    font-weight: 300;
+                    letter-spacing: 0.5px;
+                }
+                
+                .name {
+                    margin-left: 44.3px !important;
+                }
+                
+                .form-controller {
+                    background: $blue;
+                    border: 1px solid $blue;
+                    border-radius: 5px;
+                    padding: 8px 0 8px 10px;
+                    outline: none;
+                    margin-left: 3rem;
+                    width: 17rem;
+                    color: $offwhite;
+                    
+                    &:hover {
+                        border: 1px solid $offBlack;
+                    }
+                    
+                    &:focus {
+                        border: 1px solid $offBlack;
+                    }
+                }
+                
+                .message {
+                    margin-left: 6.2rem;
+                    margin-top: -1rem;
+                    font-size: 14px;
+                    resize: none;
+                }
+                
+                .btn {
+                    padding: 10px 12px 10px 12px;
+                    width: 75%;
+                    background: #00243e;
+                    border: 1px solid #00243e;
+                    border-radius: 5px;
+                    margin-left: 6rem;
+                    color: $offwhite;
+                    cursor: pointer;
+                    
+                    &:hover {
+                        background: $offblue;
+                        transition: 0.2s ease;
+                        color: $grey;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content {
+    margin-top: 3rem;
+}
