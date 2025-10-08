@@ -70,7 +70,7 @@ eleventyNavigation:
         document.getElementById('email-display').textContent = email;
         
         // Set form action dynamically
-        const formId = 'YOUR_FORM_ID'; // Replace with your actual Formspree ID
+        const formId = '{{ site.formspreeId }}'; // Injected from Eleventy data
         document.getElementById('contact-form').action = 'https://formspree.io/f/' + formId;
     })();
 </script>
