@@ -15,7 +15,6 @@ eleventyNavigation:
             </div>
         </div>
     </div>
-    <div class="border"></div>
 </section>
 <section class="contact-form">
     <div class="left">
@@ -51,8 +50,8 @@ eleventyNavigation:
                 <label class="form-label">Email: </label>
                 <input class="form-controller email" type="email" name="email" required/>
             </div>
-            <label class="form-label">Message: </label>
             <div class="form-div">
+                <label class="form-label">Message: </label>
                 <textarea class="form-controller message" name="message" rows="6" required></textarea>
             </div>
             <div class="form-div">
@@ -63,7 +62,6 @@ eleventyNavigation:
 </section>
 
 <script>
-    // Decode and display email (protection from crawlers)
     (function() {
         const encoded = ['2338FRC', 'SD308', 'ORG'];
         const email = encoded[0] + '@' + encoded[1] + '.' + encoded[2];

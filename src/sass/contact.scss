@@ -1,134 +1,239 @@
 @use "partials/vars" as *;
 
 .intro {
-    height: 20vh !important;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    margin-bottom: 4rem;
     
     .content {
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 1s ease-out;
+
         .left {
-            flex: 0.6 1;
-            overflow: hidden;
-            justify-content: center;
-            display: flex;
-            
             .wrapper {
                 h1 {
+                    font-size: clamp(2.5rem, 5vw, 4rem);
+                    font-weight: 800;
+                    letter-spacing: 0.02em;
+                    position: relative;
+                    display: inline-block;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -10px;
+                        left: 0;
+                        right: 0;
+                        height: 4px;
+                        background: linear-gradient(90deg, transparent, $orange, transparent);
+                        border-radius: 2px;
+                        box-shadow: 0 0 20px rgba($orange, 0.6);
+                    }
+
                     span {
-                        color: $orange;
+                        background: linear-gradient(135deg, $orange, lighten($orange, 15%));
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
                         font-weight: 300;
+                        filter: drop-shadow(0 0 15px rgba($orange, 0.4));
                     }
                 }
             }
         }
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        opacity: 0.5;
+        box-shadow: 0 0 20px rgba($orange, 0.6);
+    }
+    to {
+        opacity: 1;
+        box-shadow: 0 0 30px rgba($orange, 0.9), 0 0 40px rgba($orange, 0.6);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 
 .contact-form {
-    margin-left: 16rem;
-    margin-right: 16rem;
-    background: $offblue;
-    border-radius: 3vh;
-    padding: 3rem 4rem 3rem 3.5rem;
-    display: flex;
+    max-width: 1200px;
+    margin: 0 auto 6rem;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    animation: fadeIn 0.8s ease-out 0.3s both;
+
+    @media (width < $mid_breakpoint) {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 0 1.5rem;
+    }
     
     .left {
-        border-right: 0.5px solid $orange;
-        padding-right: 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
         
         .details {
-            text-align: center;
+            background: rgba($offblue, 0.4);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba($orange, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+                border-color: rgba($orange, 0.5);
+            }
             
             .icon {
-                color: $orange !important;
+                color: $orange;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 1rem;
+                
+                svg {
+                    width: 32px;
+                    height: 32px;
+                }
             }
             
             .title {
-                letter-spacing: 0.9px;
+                color: white;
+                font-size: 1.5rem;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                margin-bottom: 0.5rem;
+                text-align: center;
             }
             
             .detail {
-                color: $grey;
-                font-size: 13px;
-                margin-top: 4px;
+                color: $offwhite;
+                font-size: 1rem;
+                text-align: center;
+                opacity: 0.9;
             }
-        }
-        
-        .location {
-            margin-top: 2.9rem;
         }
     }
     
     .right {
+        background: rgba($offblue, 0.4);
+        padding: 3rem;
+        border-radius: 12px;
+        border: 1px solid rgba($orange, 0.2);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+        @media (width < $mid_breakpoint) {
+            padding: 2rem;
+        }
+
         .form {
-            padding-left: 3rem;
-            
-            .form-label {
-                font-size: 16px;
-                font-weight: 300;
-                letter-spacing: 0.5px;
-            }
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
             
             .form-div {
-                margin-bottom: 2rem;
-                align-items: center;
-                justify-content: center;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
                 
                 .form-label {
-                    font-size: 16px;
-                    font-weight: 300;
+                    color: white;
+                    font-size: 1rem;
+                    font-weight: 500;
                     letter-spacing: 0.5px;
                 }
                 
-                .name {
-                    margin-left: 44.3px !important;
-                }
-                
                 .form-controller {
-                    background: $blue;
-                    border: 1px solid $blue;
-                    border-radius: 5px;
-                    padding: 8px 0 8px 10px;
+                    background: rgba($blue, 0.6);
+                    border: 2px solid rgba($grey, 0.2);
+                    border-radius: 8px;
+                    padding: 0.75rem 1rem;
                     outline: none;
-                    margin-left: 3rem;
-                    width: 17rem;
+                    width: 100%;
                     color: $offwhite;
+                    font-size: 1rem;
+                    transition: all 0.3s ease;
+                    
+                    &::placeholder {
+                        color: rgba($grey, 0.6);
+                    }
                     
                     &:hover {
-                        border: 1px solid $offBlack;
+                        border-color: rgba($orange, 0.4);
                     }
                     
                     &:focus {
-                        border: 1px solid $offBlack;
+                        border-color: $orange;
+                        box-shadow: 0 0 0 3px rgba($orange, 0.1);
+                        background: rgba($blue, 0.8);
                     }
                 }
                 
                 .message {
-                    margin-left: 6.2rem;
-                    margin-top: -1rem;
-                    font-size: 14px;
-                    resize: none;
+                    font-size: 1rem;
+                    resize: vertical;
+                    min-height: 150px;
+                    font-family: inherit;
                 }
                 
                 .btn {
-                    padding: 10px 12px 10px 12px;
-                    width: 75%;
-                    background: #00243e;
-                    border: 1px solid #00243e;
-                    border-radius: 5px;
-                    margin-left: 6rem;
-                    color: $offwhite;
+                    padding: 1rem 2rem;
+                    width: 100%;
+                    background: linear-gradient(135deg, $orange, darken($orange, 10%));
+                    border: none;
+                    border-radius: 8px;
+                    color: white;
+                    font-size: 1.1rem;
+                    font-weight: 600;
                     cursor: pointer;
+                    transition: all 0.3s ease;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    box-shadow: 0 4px 15px rgba($orange, 0.3);
+                    margin-top: 1rem;
                     
                     &:hover {
-                        background: $offblue;
-                        transition: 0.2s ease;
-                        color: $grey;
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 20px rgba($orange, 0.5);
+                        background: linear-gradient(135deg, lighten($orange, 5%), $orange);
+                    }
+
+                    &:active {
+                        transform: translateY(0);
                     }
                 }
             }
         }
     }
-}
-
-.content {
-    margin-top: 3rem;
 }
