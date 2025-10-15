@@ -16,7 +16,7 @@ eleventyNavigation:
         </div>
     </div>
 </section>
-<section class="contact-form">
+<section class="contact_form">
     <div class="left">
         <div class="email details">
             <i class="icon">
@@ -25,8 +25,9 @@ eleventyNavigation:
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
             </i>
-            <h3 class="title">Email</h3>
-            <p class="detail" id="email-display">Loading...</p>
+            <h3 class="contact_form__title">Email</h3>
+            <button class="contact_form__reveal-btn" id="reveal-email-btn">Hold to Reveal Email</button>
+            <p class="contact_form__detail" id="email-display" style="display: none;"></p>
         </div>
         <div class="location details">
             <i class="icon">
@@ -35,8 +36,8 @@ eleventyNavigation:
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
             </i>
-            <h3 class="title">Location</h3>
-            <p class="detail">Oswego, IL</p>
+            <h3 class="contact_form__title">Location</h3>
+            <p class="contact_form__detail">Oswego, IL</p>
         </div>
     </div>
     
@@ -64,8 +65,47 @@ eleventyNavigation:
 <script>
     (function() {
         const encoded = ['2338FRC', 'SD308', 'ORG'];
-        const email = encoded[0] + '@' + encoded[1] + '.' + encoded[2];
-        document.getElementById('email-display').textContent = email;
+        
+        // Reveal email on button hold
+        const revealBtn = document.getElementById('reveal-email-btn');
+        const emailDisplay = document.getElementById('email-display');
+        let holdTimer = null;
+        let isRevealed = false;
+        
+        function showEmail() {
+            if (!isRevealed) {
+                const email = encoded[0] + '@' + encoded[1] + '.' + encoded[2];
+                emailDisplay.textContent = email;
+                emailDisplay.style.display = 'block';
+                revealBtn.style.display = 'none';
+                isRevealed = true;
+            }
+        }
+        
+        function startHold() {
+            revealBtn.textContent = 'Hold...';
+            holdTimer = setTimeout(showEmail, 1000); // Require 1 second hold
+        }
+        
+        function cancelHold() {
+            if (!isRevealed) {
+                clearTimeout(holdTimer);
+                revealBtn.textContent = 'Hold to Reveal Email';
+            }
+        }
+        
+        // Mouse events
+        revealBtn.addEventListener('mousedown', startHold);
+        revealBtn.addEventListener('mouseup', cancelHold);
+        revealBtn.addEventListener('mouseleave', cancelHold);
+        
+        // Touch events for mobile
+        revealBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            startHold();
+        });
+        revealBtn.addEventListener('touchend', cancelHold);
+        revealBtn.addEventListener('touchcancel', cancelHold);
         
         // Set form action dynamically
         const formId = '{{ site.formspreeId }}'; // Injected from Eleventy data

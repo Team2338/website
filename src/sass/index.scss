@@ -1,4 +1,5 @@
 @use "partials/vars" as *;
+@use "sass:color";
 
 .hero {
     position: relative;
@@ -9,6 +10,16 @@
     text-align: center;
     color: white;
     overflow: hidden;
+
+    @media (width < $mid_breakpoint) {
+        height: calc(70vh - $nav_height);
+        min-height: 500px;
+    }
+
+    @media (width < $mobile_breakpoint) {
+        height: calc(60vh - $nav_height);
+        min-height: 450px;
+    }
 
     &__background {
         position: absolute;
@@ -72,14 +83,33 @@
             opacity: 0;
             animation: fadeInUp 0.8s ease-out 0.4s forwards;
 
+            @media (width < $mid_breakpoint) {
+                line-height: 1.1;
+                margin: 0.3em 0;
+            }
+
+            @media (width < $mobile_breakpoint) {
+                line-height: 1;
+                margin: 0.2em 0;
+            }
+
             .hero__colored {
-                font-family: "Baloo 2", cursive;
                 font-weight: 900;
                 -webkit-text-stroke: 3px white;
                 text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
                 transition: all 0.3s ease;
                 display: inline-block;
                 position: relative;
+
+                @media (width < $mid_breakpoint) {
+                    -webkit-text-stroke: 2px white;
+                    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+                }
+
+                @media (width < $mobile_breakpoint) {
+                    -webkit-text-stroke: 1.5px white;
+                    text-shadow: 1.5px 1.5px 5px rgba(0, 0, 0, 0.9);
+                }
 
                 &--blue {
                     color: #00243e;
@@ -134,12 +164,34 @@
     }
 
     @media (width < $mid_breakpoint) {
-        flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
 
         &__content {
             padding-inline: 1.5em;
-            padding-bottom: 2em;
+            padding-block: 2em;
+
+            .subtitle {
+                margin-bottom: 0.3em;
+            }
+
+            .typewriter {
+                margin-top: 0.8em;
+            }
+        }
+    }
+
+    @media (width < $mobile_breakpoint) {
+        &__content {
+            padding-inline: 1em;
+            padding-block: 1.5em;
+
+            .subtitle {
+                margin-bottom: 0.2em;
+            }
+
+            .typewriter {
+                margin-top: 0.5em;
+            }
         }
     }
 }
@@ -188,19 +240,29 @@
 
     @media (width < $mid_breakpoint) {
         grid-template-columns: 1fr;
-        padding: 3rem 2rem;
-        gap: 2rem;
+        padding: 2.5rem 1.5rem;
+        gap: 1.5rem;
+        font-size: 100%;
+    }
+
+    @media (width < $mobile_breakpoint) {
+        padding: 2rem 1rem;
+        gap: 1.25rem;
     }
 
     &__subtitle {
         font-size: clamp(1.8rem, 3vw, 2.5rem);
         margin-bottom: 1rem;
         font-weight: 700;
-        background: linear-gradient(135deg, $orange, lighten($orange, 15%));
+        background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: 15%));
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
         line-height: 1.2;
+
+        @media (width < $mobile_breakpoint) {
+            margin-bottom: 0.75rem;
+        }
 
         em {
             font-style: normal;
@@ -214,6 +276,10 @@
         font-size: clamp(1rem, 1.5vw, 1.2rem);
         color: rgba(255, 255, 255, 0.95);
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+        @media (width < $mobile_breakpoint) {
+            line-height: 1.6;
+        }
 
         b {
             color: $orange;
@@ -247,19 +313,17 @@
             transform: translateY(-3px);
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
         }
+
+        @media (width > $mid_breakpoint) {
+            max-width: 125%;
+            transform: scale(1.25);
+        }
     }
 
     &__left, &__right {
         @media (width > $mid_breakpoint) {
             max-width: 90%;
             margin: 0 auto;
-        }
-    }
-
-    &__left:has(&__video) {
-        @media (width > $mid_breakpoint) {
-            max-width: 125%;
-            transform: scale(1.25);
         }
     }
 }
