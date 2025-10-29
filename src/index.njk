@@ -39,3 +39,15 @@ css: index.css
         <p class="section__text">Our 2025 bot, Stringray, won two regionals this year and made it to the division finals at the World Championship</p>
     </div>
 </section>
+
+<section class="sponsors">
+    <h2 class="sponsors__title">Our Sponsors</h2>
+    <p class="sponsors__subtitle">Thank you to our generous sponsors who make our team possible!</p>
+    <div class="sponsors__grid">
+        {% for sponsor in sponsors.sponsors %}
+        <a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer" class="sponsor-card">
+            <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" class="sponsor-card__logo">
+        </a>
+        {% endfor %}
+    </div>
+</section>

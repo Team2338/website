@@ -317,6 +317,10 @@
         @media (width > $mid_breakpoint) {
             max-width: 125%;
             transform: scale(1.25);
+
+            &:hover {
+                transform: scale(1.25) translateY(-3px);
+            }
         }
     }
 
@@ -336,5 +340,111 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+.sponsors {
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom, rgba(2, 36, 62, 0.2), rgba(2, 36, 62, 0.4));
+    text-align: center;
+
+    @media (width < $mid_breakpoint) {
+        padding: 3rem 1.5rem;
+    }
+
+    @media (width < $mobile_breakpoint) {
+        padding: 2rem 1rem;
+    }
+
+    &__title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        font-family: 'Raleway', sans-serif;
+        color: white;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: 15%));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__subtitle {
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
+        font-family: 'Open Sans', sans-serif;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 3rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+        @media (width < $mobile_breakpoint) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (width < $mid_breakpoint) {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (width < $mobile_breakpoint) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+    }
+}
+
+.sponsor-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    backdrop-filter: blur(10px);
+
+    @media (width < $mid_breakpoint) {
+        padding: 1.5rem;
+    }
+
+    @media (width < $mobile_breakpoint) {
+        padding: 1rem;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba($orange, 0.5);
+        box-shadow: 0 10px 30px rgba($orange, 0.2);
+    }
+
+    &:visited {
+        color: white;
+    }
+
+    &__logo {
+        width: 100%;
+        height: auto;
+        max-height: 100px;
+        object-fit: contain;
+        filter: brightness(0.95) grayscale(0.2);
+        transition: filter 0.3s ease;
+
+        @media (width < $mobile_breakpoint) {
+            max-height: 80px;
+        }
+    }
+
+    &:hover &__logo {
+        filter: brightness(1) grayscale(0);
     }
 }

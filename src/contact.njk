@@ -43,21 +43,24 @@ eleventyNavigation:
     
     <div class="right">
         <form class="form" id="contact-form" method="POST">
-            <div class="form-div">
-                <label class="form-label">Name: </label>
-                <input class="form-controller name" type="text" name="name" required/>
-            </div>
-            <div class="form-div">
-                <label class="form-label">Email: </label>
-                <input class="form-controller email" type="email" name="email" required/>
-            </div>
-            <div class="form-div">
-                <label class="form-label">Message: </label>
-                <textarea class="form-controller message" name="message" rows="6" required></textarea>
-            </div>
-            <div class="form-div">
-                <button type="submit" class="btn">Submit</button>
-            </div>
+            <fieldset class="form-group">
+                <legend class="visually-hidden">Contact Information</legend>
+                <div class="form-div">
+                    <label class="form-label" for="contact-name">Name: </label>
+                    <input class="form-controller name" type="text" id="contact-name" name="name" required/>
+                </div>
+                <div class="form-div">
+                    <label class="form-label" for="contact-email">Email: </label>
+                    <input class="form-controller email" type="email" id="contact-email" name="email" required/>
+                </div>
+                <div class="form-div">
+                    <label class="form-label" for="contact-message">Message: </label>
+                    <textarea class="form-controller message" id="contact-message" name="message" rows="6" required></textarea>
+                </div>
+                <div class="form-div">
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+            </fieldset>
         </form>
     </div>
 </section>

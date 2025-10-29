@@ -1,0 +1,13 @@
+sponsors:
+  - name: "Sponsor 1"
+    logo: "/static/img/sponsors/sponsor1.png"
+    url: "https://example.com"
+  - name: "Sponsor 2"
+    logo: "/static/img/sponsors/sponsor2.png"
+    url: "https://example.com"
+  - name: "Sponsor 3"
+    logo: "/static/img/sponsors/sponsor3.png"
+    url: "https://example.com"
+  - name: "Sponsor 4"
+    logo: "/static/img/sponsors/sponsor4.png"
+    url: "https://example.com"
