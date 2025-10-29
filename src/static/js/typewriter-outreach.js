@@ -40,11 +40,24 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(type, isDeleting ? erasingSpeed : typingSpeed);
   }
 
-  // Blink cursor
-  setInterval(() => {
-    cursor.style.visibility =
-      cursor.style.visibility === "hidden" ? "visible" : "hidden";
-  }, 500);
+  // Blink cursor using CSS animation instead of setInterval to avoid memory leaks
+  cursor.classList.add("blink");
+  // Dynamically inject CSS for blinking if not already present
+  if (!document.getElementById("typewriter-blink-style")) {
+    const style = document.createElement("style");
+    style.id = "typewriter-blink-style";
+    style.textContent = `
+      @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      .blink {
+        animation: blink 1s step-end infinite;
+      }
+    `;
+    document.head.appendChild(style);
+  }
 
   type();
 });
