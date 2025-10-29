@@ -139,7 +139,7 @@
             }
             
             .contact_form__reveal-btn {
-                background: linear-gradient(135deg, $orange, darken($orange, 10%));
+                background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: -20%));
                 border: none;
                 border-radius: 8px;
                 color: white;
@@ -277,7 +277,7 @@
                     padding: 1rem 2rem;
                     width: 100%;
                     box-sizing: border-box;
-                    background: linear-gradient(135deg, $orange, darken($orange, 10%));
+                    background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: -20%));
                     border: none;
                     border-radius: 8px;
                     color: white;

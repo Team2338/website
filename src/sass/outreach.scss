@@ -243,7 +243,7 @@
 		width: clamp(300px, 85%, 800px);
 		max-height: 85vh;
 		overflow-y: auto;
-		background: linear-gradient(135deg, $blue 0%, darken($blue, 5%) 100%);
+		background: linear-gradient(135deg, $blue 0%, color.scale($blue, $lightness: -40%) 100%);
 		color: white;
 
 		animation: slideIn 0.3s ease-out;
