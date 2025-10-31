@@ -1,0 +1,431 @@
+@use "partials/vars" as *;
+@use "sass:color";
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    margin-bottom: 4rem;
+    background: linear-gradient(135deg, rgba($blue, 0.9), rgba($offblue, 0.8));
+
+    @media (width < $mid_breakpoint) {
+        padding: 4rem 1.5rem 3rem;
+        margin-bottom: 3rem;
+    }
+
+    @media (width < $mobile_breakpoint) {
+        padding: 3rem 1rem 2rem;
+        margin-bottom: 2rem;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    &__title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: 15%));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 15px rgba($orange, 0.4));
+    }
+
+    &__subtitle {
+        font-size: clamp(1.1rem, 2vw, 1.5rem);
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.robots {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 2rem 6rem;
+
+	@media (width < $mid_breakpoint) {
+		padding: 0 1.5rem 4rem;
+	}
+
+	@media (width < $mobile_breakpoint) {
+		padding: 0 1rem 3rem;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+		animation: fadeIn 0.8s ease-out;
+
+		@media (width < $mid_breakpoint) {
+			gap: 3rem;
+		}
+	}
+
+	&__title {
+		font-size: clamp(1.8rem, 3vw, 2.5rem);
+		font-weight: 700;
+		color: white;
+		margin-bottom: 0.5rem;
+		background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: 15%));
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	&__subtitle {
+		font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+		color: rgba(255, 255, 255, 0.7);
+		margin-bottom: 2rem;
+		line-height: 1.6;
+
+		@media (width < $mobile_breakpoint) {
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.carousel {
+	position: relative;
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 0 3rem;
+
+	@media (width < $mid_breakpoint) {
+		max-width: 450px;
+		padding: 0 2.5rem;
+	}
+
+	@media (width < $mobile_breakpoint) {
+		max-width: 350px;
+		padding: 0 2rem;
+	}
+
+	&__track-container {
+		overflow: hidden;
+		border-radius: 12px;
+		width: 100%;
+		position: relative;
+	}
+
+	&__track {
+		display: flex;
+		position: relative;
+		transition: transform 0.5s ease-in-out;
+		align-items: flex-start;
+	}
+
+	&__slide {
+		min-width: 100%;
+		width: 100%;
+		flex-shrink: 0;
+		box-sizing: border-box;
+	}
+
+	&__button {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba($orange, 0.9);
+		border: none;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		z-index: 10;
+		color: white;
+
+		@media (width < $mobile_breakpoint) {
+			width: 35px;
+			height: 35px;
+		}
+
+		&:hover {
+			background: $orange;
+			transform: translateY(-50%) scale(1.1);
+		}
+
+		&--prev {
+			left: 0;
+		}
+
+		&--next {
+			right: 0;
+		}
+
+		svg {
+			width: 24px;
+			height: 24px;
+
+			@media (width < $mobile_breakpoint) {
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+
+	&__indicators {
+		display: flex;
+		gap: 0.75rem;
+		justify-content: center;
+		margin-top: 2rem;
+	}
+
+	&__indicator {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.3);
+		border: none;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.5);
+		}
+
+		&--active {
+			background: $orange;
+			width: 32px;
+			border-radius: 6px;
+		}
+	}
+}
+
+.robot-card {
+	background: rgba($offblue, 0.4);
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	box-sizing: border-box;
+	min-height: 600px;
+
+	@media (width < $mid_breakpoint) {
+		min-height: 550px;
+	}
+
+	@media (width < $mobile_breakpoint) {
+		min-height: 500px;
+	}
+
+	&__image-wrapper {
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		overflow: hidden;
+		background: rgba($blue, 0.3);
+		flex-shrink: 0;
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+
+	&__content {
+		padding: 1.5rem;
+		color: white;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+
+		@media (width < $mobile_breakpoint) {
+			padding: 1rem;
+		}
+
+		@media (width < 400px) {
+			padding: 0.75rem;
+		}
+	}
+
+	&__name {
+		font-size: clamp(1.3rem, 4vw, 1.8rem);
+		font-weight: 700;
+		margin-bottom: 0.25rem;
+		background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: 15%));
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		line-height: 1.2;
+	}
+
+	&__year {
+		font-size: clamp(0.9rem, 3vw, 1.1rem);
+		color: rgba(255, 255, 255, 0.7);
+		margin-bottom: 0.75rem;
+		font-weight: 600;
+	}
+
+	&__description {
+		font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+		line-height: 1.5;
+		color: rgba(255, 255, 255, 0.9);
+		margin-bottom: 1rem;
+	}
+
+	&__achievements {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			padding-left: 1.5rem;
+			position: relative;
+			margin-bottom: 0.4rem;
+			color: rgba(255, 255, 255, 0.85);
+			font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+			line-height: 1.4;
+
+			&::before {
+				content: "🏆";
+				position: absolute;
+				left: 0;
+				font-size: 0.9em;
+			}
+		}
+	}
+}
+
+.team-info {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 2rem 4rem;
+	animation: fadeIn 0.8s ease-out;
+
+	@media (width < $mid_breakpoint) {
+		padding: 0 1.5rem 3rem;
+	}
+
+	@media (width < $mobile_breakpoint) {
+		padding: 0 1rem 2rem;
+	}
+
+	&__container {
+		text-align: center;
+	}
+
+	&__title {
+		font-size: clamp(1.8rem, 3vw, 2.5rem);
+		font-weight: 700;
+		color: white;
+		margin-bottom: 0.5rem;
+		background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: 15%));
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	&__text {
+		font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+		color: rgba(255, 255, 255, 0.7);
+		line-height: 1.6;
+		margin-bottom: 2rem;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+
+		@media (width < $mobile_breakpoint) {
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
+.team-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 2rem;
+	max-width: 900px;
+	margin: 0 auto;
+
+	@media (width < $mobile_breakpoint) {
+		gap: 1.5rem;
+		grid-template-columns: 1fr;
+	}
+}
+
+.team-stat {
+	background: rgba($offblue, 0.4);
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: 12px;
+	padding: 2rem;
+	transition: all 0.3s ease;
+
+	@media (width < $mobile_breakpoint) {
+		padding: 1.5rem;
+	}
+
+	&:hover {
+		transform: translateY(-5px);
+		border-color: rgba($orange, 0.5);
+		box-shadow: 0 10px 30px rgba($orange, 0.2);
+	}
+
+	&__number {
+		font-size: 3rem;
+		font-weight: 700;
+		color: $orange;
+		margin-bottom: 0.5rem;
+
+		@media (width < $mobile_breakpoint) {
+			font-size: 2.5rem;
+		}
+	}
+
+	&__label {
+		font-size: 1.1rem;
+		color: rgba(255, 255, 255, 0.85);
+		margin: 0;
+
+		@media (width < $mobile_breakpoint) {
+			font-size: 1rem;
+		}
+	}
+}
