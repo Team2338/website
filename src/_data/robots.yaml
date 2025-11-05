@@ -1,0 +1,24 @@
+robots:
+  - name: "Example Robot 2025"
+    year: "2025"
+    image: "/static/img/robots/2025-robot.jpg"
+    description: "Sample Text"
+    achievements:
+      - "Sample Text"
+      - "Sample Text"
+  
+  - name: "Example Robot 2024"
+    year: "2024"
+    image: "/static/img/robots/2024-robot.jpg"
+    description: "Sample Text"
+    achievements:
+      - "Sample Text"
+      - "Sample Text"
+  
+  - name: "Example Robot 2023"
+    year: "2023"
+    image: "/static/img/robots/2023-robot.jpg"
+    description: "Sample Text"
+    achievements:
+      - "Sample Text"
+      - "Sample Text"

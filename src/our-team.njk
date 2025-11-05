@@ -1,0 +1,193 @@
+---
+title: Our Team
+layout: base.njk
+permalink: /our-team/
+css: our-team.css
+---
+<header class="hero">
+    <div class="hero__content">
+        <h1 class="hero__title">Our Team</h1>
+        <p class="hero__subtitle">Meet the students and mentors behind Gear It Forward</p>
+    </div>
+</header>
+
+<section class="robots">
+    <div class="robots__container">
+        <h2 class="robots__title">Our Robots</h2>
+        <p class="robots__subtitle">A showcase of our competition robots through the years</p>
+
+        <div class="carousel">
+            <button class="carousel__button carousel__button--prev" aria-label="Previous robot">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+            </button>
+
+            <div class="carousel__track-container">
+                <div class="carousel__track">
+                    {% for robot in robots.robots %}
+                        <div class="carousel__slide">
+                            <div class="robot-card">
+                                <div class="robot-card__image-wrapper">
+                                    <img src="{{ robot.image }}" alt="{{ robot.name }}" class="robot-card__image">
+                                </div>
+                                <div class="robot-card__content">
+                                    <h3 class="robot-card__name">{{ robot.name }}</h3>
+                                    <p class="robot-card__year">{{ robot.year }}</p>
+                                    <p class="robot-card__description">{{ robot.description }}</p>
+                                    {% if robot.achievements %}
+                                        <ul class="robot-card__achievements">
+                                            {% for achievement in robot.achievements %}
+                                                <li>{{ achievement }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <button class="carousel__button carousel__button--next" aria-label="Next robot">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="carousel__indicators">
+            {% for robot in robots.robots %}
+                <button class="carousel__indicator" data-index="{{ loop.index0 }}" aria-label="Go to robot {{ loop.index }}"></button>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="team-info">
+    <div class="team-info__container">
+        <h2 class="team-info__title">About Our Team</h2>
+        <p class="team-info__text">Team 2338 - Gear It Forward is a FIRST Robotics Competition team from Oswego, Illinois. We are a student-led team dedicated to building robots, developing skills, and giving back to our community.</p>
+
+        <div class="team-stats">
+            <div class="team-stat">
+                <h3 class="team-stat__number">50+</h3>
+                <p class="team-stat__label">Team Members</p>
+            </div>
+            <div class="team-stat">
+                <h3 class="team-stat__number">15+</h3>
+                <p class="team-stat__label">Years Competing</p>
+            </div>
+            <div class="team-stat">
+                <h3 class="team-stat__number">100+</h3>
+                <p class="team-stat__label">Community Events</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const track = document.querySelector('.carousel__track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel__button--next');
+    const prevButton = document.querySelector('.carousel__button--prev');
+    const indicators = Array.from(document.querySelectorAll('.carousel__indicator'));
+
+    const slideCount = slides.length;
+    let currentSlide = 0;
+    let isTransitioning = false;
+
+    // Clone first and last slides for seamless looping
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slideCount - 1].cloneNode(true);
+
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
+
+    const allSlides = Array.from(track.children);
+    const slideWidth = slides[0]
+        .getBoundingClientRect()
+        .width;
+
+    // Position slides
+    allSlides.forEach((slide, index) => {
+        slide.style.left = `${slideWidth * index}px`;
+    });
+
+    // Start at the first real slide (index 1 because of clone)
+    track.style.transform = `translateX(-${slideWidth}px)`;
+
+    function moveToSlide(targetIndex) {
+        if (isTransitioning) 
+            return;
+        isTransitioning = true;
+
+        const actualIndex = targetIndex + 1; // Account for clone
+        track.style.transition = 'transform 0.5s ease-in-out';
+        track.style.transform = `translateX(-${slideWidth * actualIndex}px)`;
+
+        currentSlide = targetIndex;
+        updateIndicators();
+
+        setTimeout(() => {
+            // Handle looping
+            if (currentSlide === slideCount) {
+                track.style.transition = 'none';
+                currentSlide = 0;
+                track.style.transform = `translateX(-${slideWidth}px)`;
+            } else if (currentSlide === -1) {
+                track.style.transition = 'none';
+                currentSlide = slideCount - 1;
+                track.style.transform = `translateX(-${slideWidth * slideCount}px)`;
+            }
+            isTransitioning = false;
+            updateIndicators();
+        }, 500);
+    }
+
+    function updateIndicators() {
+        const realIndex = currentSlide < 0
+            ? slideCount - 1
+            : currentSlide >= slideCount
+                ? 0
+                : currentSlide;
+        indicators.forEach((indicator, index) => {
+            indicator
+                .classList
+                .toggle('carousel__indicator--active', index === realIndex);
+        });
+    }
+
+    nextButton.addEventListener('click', () => {
+        moveToSlide(currentSlide + 1);
+    });
+
+    prevButton.addEventListener('click', () => {
+        moveToSlide(currentSlide - 1);
+    });
+
+    indicators.forEach(indicator => {
+        indicator.addEventListener('click', (e) => {
+            const targetIndex = parseInt(e.target.dataset.index);
+            moveToSlide(targetIndex);
+        });
+    });
+
+    // Update on resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const newSlideWidth = slides[0]
+                .getBoundingClientRect()
+                .width;
+            allSlides.forEach((slide, index) => {
+                slide.style.left = `${newSlideWidth * index}px`;
+            });
+            track.style.transition = 'none';
+            track.style.transform = `translateX(-${newSlideWidth * (currentSlide + 1)}px)`;
+        }, 250);
+    });
+
+    updateIndicators();
+</script>

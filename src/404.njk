@@ -1,0 +1,47 @@
+---
+title: 404 - Page Not Found
+layout: base.njk
+permalink: /404.html
+css: NotFound.css
+eleventyExcludeFromCollections: true
+---
+
+<section class="error-page">
+    <div class="error-page__container">
+        <div class="error-page__content">
+            <div class="error-page__text-wrapper">
+                <h2 class="error-page__title">404 ERROR: <span> NOT FOUND!</span></h2>
+                <h3 class="error-page__message">
+                    Are you Lost? Click here to go to our homepage!
+                    <br/>
+                    <a href="/">Home</a>
+                    <br/>
+                    Garret's Dad "DadBot" Has a Joke for You!
+                    <br/>
+                    <span id="dad-joke">Loading joke...</span>
+                </h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    async function fetchDadJoke() {
+        try {
+            const response = await fetch('https://icanhazdadjoke.com/', {
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            const data = await response.json();
+            document
+                .getElementById('dad-joke')
+                .textContent = data.joke;
+        } catch (error) {
+            document
+                .getElementById('dad-joke')
+                .textContent = 'Sorry, couldn\'t load a joke right now!';
+        }
+    }
+    fetchDadJoke();
+</script>

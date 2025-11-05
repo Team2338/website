@@ -1,34 +1,57 @@
 ---
+title: "Team 2338: Gear It Forward"
 layout: base.njk
 css: index.css
 ---
 <header class="hero">
-    <div class="hero__left">
-        <img src="/static/img/landing/2025Full-Team.jpg" alt="Team 2338: Gear It Forward at kickoff in 2025." class="hero__left__image">
-    </div>
-    <div class="hero__right">
+    <div class="hero__background"></div>
+    <div class="hero__content">
         <p class="subtitle">We are,</p>
-        <h1>Team 2338: Gear It Forward</h1>
+        <h1>
+            Team 
+            <span class="hero__colored hero__colored--blue">2</span>
+            <span class="hero__colored hero__colored--orange">33</span>
+            <span class="hero__colored hero__colored--blue">8</span>: Gear It Forward
+        </h1>
         <p class="subtitle">A FIRST Robotics Competition team from Oswego, Illinois</p>
-        {#TODO: Typewriter#}
+        <p class="typewriter subtitle">
+            <span id="typed-text"></span>
+            <span id="cursor">|</span>
+        </p>
+        <script src="/static/js/typewriter-index.js" defer></script>
     </div>
 </header>
+
 <section class="section">
     <div class="section__left">
         <h2 class="section__subtitle">What is <em>FIRST</em> & <em>FRC</em>?</h2>
         <p class="section__text">
-            <b>FIRST</b> is a global robotics community preparing students for the future and is the world's leading youth-serving nonprofit for STEM education. <b>First Robotics Competition</b> combines the excitement of sport with the rigors of science and technology. Students sometimes refer to it as “the hardest fun you’ll ever have.”</p>
+            <b>FIRST</b> is a global robotics community preparing students for the future and is the world's leading youth-serving nonprofit for STEM education. <b>First Robotics Competition</b> combines the excitement of sport with the rigors of science and technology. Students sometimes refer to it as "the hardest fun you'll ever have."
+        </p>
     </div>
     <div class="section__right">
-        <img src="/static/img/landing/2023-Comp-Group.jpeg" alt="2023 Compeition Group" class="section__img">
+        <img src="/static/img/landing/2023-Comp-Group.jpg" alt="2023 Competition Group" class="section__img">
     </div>
 </section>
-<div class="section">
+
+<section class="section">
     <div class="section__left">
-        <iframe src="https://www.youtube-nocookie.com/embed/L9y0WqW7Js4?si=mj06YqSfjGExvC52" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube-nocookie.com/embed/L9y0WqW7Js4?si=mj06YqSfjGExvC52" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="section__video"></iframe>
     </div>
     <div class="section__right">
-        <h2 class="section_subtitle">2025 Season</h2>
+        <h2 class="section__subtitle">2025 Season</h2>
         <p class="section__text">Our 2025 bot, Stringray, won two regionals this year and made it to the division finals at the World Championship</p>
     </div>
-</div>
+</section>
+
+<section class="sponsors">
+    <h2 class="sponsors__title">Our Sponsors</h2>
+    <p class="sponsors__subtitle">Thank you to our generous sponsors who make our team possible!</p>
+    <div class="sponsors__grid">
+        {% for sponsor in sponsors.sponsors %}
+            <a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer" class="sponsor-card">
+                <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" class="sponsor-card__logo">
+            </a>
+        {% endfor %}
+    </div>
+</section>

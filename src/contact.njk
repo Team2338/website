@@ -1,0 +1,119 @@
+---
+title: Contact Us
+layout: base.njk
+permalink: /contact/
+css: contact.css
+eleventyNavigation:
+    key: Contact
+    order: 4
+---
+<section class="intro">
+    <div class="content">
+        <div class="content__left">
+            <div class="content__left__wrapper">
+                <h1>Contact <span>Us</span></h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact_form">
+    <div class="contact_form__left">
+        <div class="contact_form__left__details">
+            <i class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+            </i>
+            <h3 class="contact_form__title">Email</h3>
+            <button class="contact_form__reveal-btn" id="reveal-email-btn">Hold to Reveal Email</button>
+            <p class="contact_form__detail" id="email-display" style="display: none;"></p>
+        </div>
+        <div class="contact_form__left__details">
+            <i class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+            </i>
+            <h3 class="contact_form__title">Location</h3>
+            <p class="contact_form__detail">Oswego, IL</p>
+        </div>
+    </div>
+
+    <div class="right">
+        <form class="form" id="contact-form" method="POST">
+            <fieldset class="form__group">
+                <legend class="visually-hidden">Contact Information</legend>
+                <div class="form__group__section">
+                    <label class="form__group__section__label" for="contact-name">Name: </label>
+                    <input class="form__group__section__controller name" type="text" id="contact-name" name="name" required/>
+                </div>
+                <div class="form__group__section">
+                    <label class="form__group__section__label" for="contact-email">Email: </label>
+                    <input class="form__group__section__controller email" type="email" id="contact-email" name="email" required/>
+                </div>
+                <div class="form__group__section">
+                    <label class="form__group__section__label" for="contact-message">Message: </label>
+                    <textarea class="form__group__section__controller form__group__section__controller--message" id="contact-message" name="message" rows="6" required></textarea>
+                </div>
+                <div class="form__group__section">
+                    <button type="submit" class="form__group__btn">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>
+
+<script>
+    (function () {
+        const encoded = ['2338frc', 'sd308', 'org'];
+
+        // Reveal email on button hold
+        const revealBtn = document.getElementById('reveal-email-btn');
+        const emailDisplay = document.getElementById('email-display');
+        let holdTimer = null;
+        let isRevealed = false;
+
+        function showEmail() {
+            if (!isRevealed) {
+                const email = encoded[0] + '@' + encoded[1] + '.' + encoded[2];
+                emailDisplay.textContent = email;
+                emailDisplay.style.display = 'block';
+                revealBtn.style.display = 'none';
+                isRevealed = true;
+            }
+        }
+
+        function startHold() {
+            revealBtn.textContent = 'Hold...';
+            holdTimer = setTimeout(showEmail, 1000); // Require 1 second hold
+        }
+
+        function cancelHold() {
+            if (!isRevealed) {
+                clearTimeout(holdTimer);
+                revealBtn.textContent = 'Hold to Reveal Email';
+            }
+        }
+
+        // Mouse events
+        revealBtn.addEventListener('mousedown', startHold);
+        revealBtn.addEventListener('mouseup', cancelHold);
+        revealBtn.addEventListener('mouseleave', cancelHold);
+
+        // Touch events for mobile
+        revealBtn.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+            startHold();
+        });
+        revealBtn.addEventListener('touchend', cancelHold);
+        revealBtn.addEventListener('touchcancel', cancelHold);
+
+        // Set form action dynamically
+        const formId = '{{ site.formspreeId }}'; // Injected from Eleventy data
+        document
+            .getElementById('contact-form')
+            .action = 'https://formspree.io/f/' + formId;
+    })();
+</script>

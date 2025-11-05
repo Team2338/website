@@ -3,23 +3,32 @@
 .footer {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	padding-inline: 1em;
-	margin-block: 2em;
-
-	background: $blue;
+	padding: 1.5rem 1.5rem 1rem;
+	margin-top: 3rem;
+	background: rgba(0, 0, 0, 0.2);
 	color: white;
+	font-size: 0.9rem;
+	align-items: center;
 
 	@media only screen and (width < $tablet_breakpoint) {
 		grid-template-columns: 1fr;
 		gap: 1em;
 		text-align: center;
+		padding: 1.5rem 1rem;
+	}
+
+	&__left {
+		&__copyright {
+			color: rgba(255, 255, 255, 0.85);
+			font-size: 0.85rem;
+		}
 	}
 
 	&__list {
 		display: flex;
 		justify-content: space-evenly;
-		height: 1.5em;
-		max-width: 300px;
+		height: 1.3em;
+		max-width: 250px;
 		margin: auto;
 		padding: 0;
 
@@ -27,15 +36,16 @@
 
 		&__item {
 			&__icon {
-				fill: white;
+				fill: rgba(255, 255, 255, 0.85);
 				height: 100%;
 
-				transition: fill 0.25s ease;
+				transition: fill 0.25s ease, transform 0.25s ease;
 
 				&:hover,
 				&:focus {
 					fill: $orange;
 					cursor: pointer;
+					transform: translateY(-3px) scale(1.1);
 				}
 			}
 		}
@@ -49,7 +59,19 @@
 		}
 
 		&__link {
-			color: white;
+			color: rgba(255, 255, 255, 0.85);
+			text-decoration: none;
+			font-size: 0.85rem;
+			transition: color 0.25s ease;
+
+			&:hover,
+			&:focus {
+				color: $orange;
+			}
 		}
 	}
 }
+
+
+
+
