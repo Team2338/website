@@ -1,164 +1,165 @@
 @use "./_vars.scss" as *;
 
 .navbar {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding: calc(($nav_height - 3em) * 0.5) 2em;
-  height: $nav_height;
-  background: $blue;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-
-  @media (max-width: $tablet_breakpoint) {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 2em;
-    padding-block: 0.5em;
-  }
-
-  .nav_left {
-    display: flex;
-    gap: 1em;
-    align-items: center;
-
-    &_logo {
-      max-width: 3em;
-      max-height: 3em;
-      aspect-ratio: 1/1;
-    }
-
-    a {
-      text-decoration: none;
-      color: white;
-      font-size: 125%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: color 0.3s ease;
-      
-      &:hover {
-        color: $orange;
-      }
-    }
-  }
-
-  .nav_right {
-    display: flex;
-    gap: 1em;
-    justify-self: end;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: calc(($nav_height - 3em) * 0.5) 2em;
+    height: $nav_height;
+    background: $blue;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 
     @media (max-width: $tablet_breakpoint) {
-      flex-direction: column;
-      position: fixed;
-      top: $nav_height;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: calc(100vh - $nav_height);
-      background-color: $blue;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      gap: 2em;
-      padding: 0;
-      margin: 0;
-      transform: translateX(-100%);
-      opacity: 0;
-      overflow: hidden;
-      transition: transform 0.45s ease, opacity 0.35s ease;
-      z-index: 999;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2em;
+        padding-block: 0.5em;
     }
 
-    &--open {
-      @media (max-width: $tablet_breakpoint) {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-  }
+    .nav__left {
+        display: flex;
+        gap: 1em;
+        align-items: center;
 
-  .nav_item {
-    display: flex;
+        &__logo img {
+            max-width: 3em;
+            max-height: calc($nav_height * 0.8);
+            aspect-ratio: 1/1;
+        }
 
-    @media (max-width: $tablet_breakpoint) {
-      width: 100%;
-      justify-content: center;
-    }
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 125%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
 
-    &_link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 110%;
-      padding: 0.5em 0.75em;
-      border: 2px solid transparent;
-      border-radius: 10px;
-      text-decoration: none;
-      color: white;
-      background-color: transparent;
-      transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-
-      @media (max-width: $tablet_breakpoint) {
-        font-size: 150%;
-      }
-
-      &:hover,
-      &:focus-visible {
-        outline: none;
-        border-color: $orange;
-        background-color: rgba($orange, 0.1);
-        color: $orange;
-        transform: translateY(-2px);
-      }
-    }
-  }
-
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    background: none;
-    border: none;
-    z-index: 1001;
-    cursor: pointer;
-
-    @media (max-width: $tablet_breakpoint) {
-      display: flex;
-      align-self: center;
+            &:hover {
+                color: $orange;
+            }
+        }
     }
 
-    .bar {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 3px 0;
-      transition: all 0.3s ease-in-out;
-      border-radius: 2px;
+    .nav__right {
+        display: flex;
+        gap: 1em;
+        justify-self: end;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        @media (max-width: $tablet_breakpoint) {
+            flex-direction: column;
+            position: fixed;
+            top: $nav_height;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: calc(100vh - $nav_height);
+            background-color: $blue;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 2em;
+            padding: 0;
+            margin: 0;
+            transform: translateX(-100%);
+            opacity: 0;
+            overflow: hidden;
+            transition: transform 0.45s ease, opacity 0.35s ease;
+            z-index: 999;
+        }
+
+        &--open {
+            @media (max-width: $tablet_breakpoint) {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
     }
 
-    &--active {
-      .bar:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-      }
+    .nav__item {
+        display: flex;
 
-      .bar:nth-child(2) {
-        opacity: 0;
-      }
+        @media (max-width: $tablet_breakpoint) {
+            width: 100%;
+            justify-content: center;
+        }
 
-      .bar:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-      }
+        &__link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 110%;
+            padding: 0.5em 0.75em;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            background-color: transparent;
+            transition: color 0.3s ease, background-color 0.3s ease,
+                border-color 0.3s ease, transform 0.3s ease;
+
+            @media (max-width: $tablet_breakpoint) {
+                font-size: 150%;
+            }
+
+            &:hover,
+            &:focus-visible {
+                outline: none;
+                border-color: $orange;
+                background-color: rgba($orange, 0.1);
+                color: $orange;
+                transform: translateY(-2px);
+            }
+        }
     }
-  }
+
+    .menu_toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        background: none;
+        border: none;
+        z-index: 1001;
+        cursor: pointer;
+
+        @media (max-width: $tablet_breakpoint) {
+            display: flex;
+            align-self: center;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: all 0.3s ease-in-out;
+            border-radius: 2px;
+        }
+
+        &--active {
+            .bar:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+
+            .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .bar:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+        }
+    }
 }

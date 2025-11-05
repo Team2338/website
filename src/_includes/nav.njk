@@ -1,69 +1,85 @@
 <nav class="navbar">
-  <!-- Left: logo + site title -->
-  <div class="nav_left">
-    <a href="/" class="nav_logo_link">
-      <img src="/static/img/MiniLogo-256.png" alt="2338 Logo" class="nav_left_logo">
-    </a>
-    <a href="/" class="nav_site_title">Gear it Forward Team 2338</a>
-  </div>
+    <!-- Left: logo + site title -->
+    <div class="nav__left">
+        <a href="/" class="nav__left__logo">
+            <img src="/static/img/MiniLogo-256.png" alt="2338 Logo">
+        </a>
+        <a href="/" class="nav__title">Gear it Forward Team 2338</a>
+    </div>
 
-  <!-- Right: navigation links -->
-  <ul class="nav_right">
-    <li class="nav_item">
-      <a href="/" class="nav_item_link">Home</a>
-    </li>
-    <li class="nav_item">
-      <a href="/outreach" class="nav_item_link">Outreach</a>
-    </li>
-    <li class="nav_item">
-      <a href="/resources" class="nav_item_link">Resources</a>
-    </li>
-    <li class="nav_item">
-      <a href="/our-team" class="nav_item_link">Our Team</a>
-    </li>
-    <li class="nav_item">
-      <a href="/contact" class="nav_item_link">Contact</a>
-    </li>
-  </ul>
+    <!-- Right: navigation links -->
+    <ul class="nav__right">
+        <li class="nav__item">
+            <a href="/" class="nav__item__link">Home</a>
+        </li>
+        <li class="nav__item">
+            <a href="/outreach" class="nav__item__link">Outreach</a>
+        </li>
+        <li class="nav__item">
+            <a href="/resources" class="nav__item__link">Resources</a>
+        </li>
+        <li class="nav__item">
+            <a href="/our-team" class="nav__item__link">Our Team</a>
+        </li>
+        <li class="nav__item">
+            <a href="/contact" class="nav__item__link">Contact</a>
+        </li>
+    </ul>
 
-  <!-- Mobile menu toggle -->
-  <button type="button" class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
+    <!-- Mobile menu toggle -->
+    <button type="button" class="menu_toggle" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
 </nav>
 
 <script>
-  const navToggle = document.querySelector("#mobile-menu");
-  const navList = document.querySelector(".nav_right");
+    const navToggle = document.querySelector("#mobile-menu");
+    const navList = document.querySelector(".nav__right");
 
-  // Mobile menu toggle
-  navToggle.addEventListener("click", () => {
-    const expanded = navToggle.getAttribute("aria-expanded") === "true" || false;
-    navToggle.setAttribute("aria-expanded", !expanded);
+    // Mobile menu toggle
+    navToggle.addEventListener("click", () => {
+        const expanded = navToggle.getAttribute("aria-expanded")
+            ? "true"
+            : false;
+        navToggle.setAttribute("aria-expanded", !expanded);
 
-    navToggle.classList.toggle("menu-toggle--active");
-    navList.classList.toggle("nav_right--open");
-  });
-
-  // Close mobile menu on link click
-  navList.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      if (navList.classList.contains("nav_right--open")) {
-        navList.classList.remove("nav_right--open");
-        navToggle.classList.remove("menu-toggle--active");
-        navToggle.setAttribute("aria-expanded", false);
-      }
+        navToggle
+            .classList
+            .toggle("menu_toggle--active");
+        navList
+            .classList
+            .toggle("nav__right--open");
     });
-  });
 
-  // Optional: keyboard accessibility (close menu on Esc)
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && navList.classList.contains("nav_right--open")) {
-      navList.classList.remove("nav_right--open");
-      navToggle.classList.remove("menu-toggle--active");
-      navToggle.setAttribute("aria-expanded", false);
-    }
-  });
+    // Close mobile menu on link click
+    navList
+        .querySelectorAll("a")
+        .forEach(link => {
+            link.addEventListener("click", () => {
+                if (navList.classList.contains("nav__right--open")) {
+                    navList
+                        .classList
+                        .remove("nav__right--open");
+                    navToggle
+                        .classList
+                        .remove("menu_toggle--active");
+                    navToggle.setAttribute("aria-expanded", false);
+                }
+            });
+        });
+
+    // Optional: keyboard accessibility (close menu on Esc)
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && navList.classList.contains("nav_right--open")) {
+            navList
+                .classList
+                .remove("nav_right--open");
+            navToggle
+                .classList
+                .remove("menu-toggle--active");
+            navToggle.setAttribute("aria-expanded", false);
+        }
+    });
 </script>

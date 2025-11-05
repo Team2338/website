@@ -1,4 +1,5 @@
 ---
+title: "Team 2338: Gear It Forward"
 layout: base.njk
 css: index.css
 ---
@@ -8,11 +9,14 @@ css: index.css
         <p class="subtitle">We are,</p>
         <h1>
             Team 
-            <span class="hero__colored hero__colored--blue">2</span><span class="hero__colored hero__colored--orange">33</span><span class="hero__colored hero__colored--blue">8</span>: Gear It Forward
+            <span class="hero__colored hero__colored--blue">2</span>
+            <span class="hero__colored hero__colored--orange">33</span>
+            <span class="hero__colored hero__colored--blue">8</span>: Gear It Forward
         </h1>
         <p class="subtitle">A FIRST Robotics Competition team from Oswego, Illinois</p>
         <p class="typewriter subtitle">
-            <span id="typed-text"></span><span id="cursor">|</span>
+            <span id="typed-text"></span>
+            <span id="cursor">|</span>
         </p>
         <script src="/static/js/typewriter-index.js" defer></script>
     </div>
@@ -45,9 +49,9 @@ css: index.css
     <p class="sponsors__subtitle">Thank you to our generous sponsors who make our team possible!</p>
     <div class="sponsors__grid">
         {% for sponsor in sponsors.sponsors %}
-        <a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer" class="sponsor-card">
-            <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" class="sponsor-card__logo">
-        </a>
+            <a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer" class="sponsor-card">
+                <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" class="sponsor-card__logo">
+            </a>
         {% endfor %}
     </div>
 </section>

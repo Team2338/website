@@ -6,24 +6,24 @@ css: NotFound.css
 eleventyExcludeFromCollections: true
 ---
 
-<div class="error-page">
+<section class="error-page">
     <div class="error-page__container">
         <div class="error-page__content">
             <div class="error-page__text-wrapper">
                 <h2 class="error-page__title">404 ERROR: <span> NOT FOUND!</span></h2>
                 <h3 class="error-page__message">
                     Are you Lost? Click here to go to our homepage!
-                    <br />
+                    <br/>
                     <a href="/">Home</a>
-                    <br />
+                    <br/>
                     Garret's Dad "DadBot" Has a Joke for You!
-                    <br />
+                    <br/>
                     <span id="dad-joke">Loading joke...</span>
                 </h3>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <script>
     async function fetchDadJoke() {
@@ -34,9 +34,13 @@ eleventyExcludeFromCollections: true
                 }
             });
             const data = await response.json();
-            document.getElementById('dad-joke').textContent = data.joke;
+            document
+                .getElementById('dad-joke')
+                .textContent = data.joke;
         } catch (error) {
-            document.getElementById('dad-joke').textContent = 'Sorry, couldn\'t load a joke right now!';
+            document
+                .getElementById('dad-joke')
+                .textContent = 'Sorry, couldn\'t load a joke right now!';
         }
     }
     fetchDadJoke();

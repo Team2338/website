@@ -11,41 +11,48 @@
     color: white;
     overflow: hidden;
     margin-bottom: 4rem;
-    
+
     .content {
         position: relative;
         z-index: 1;
         animation: fadeInUp 1s ease-out;
 
-        .left {
-            .wrapper {
-                h1 {
-                    font-size: clamp(2.5rem, 5vw, 4rem);
-                    font-weight: 800;
-                    letter-spacing: 0.02em;
-                    position: relative;
-                    display: inline-block;
+        &__left__wrapper {
+            h1 {
+                font-size: clamp(2.5rem, 5vw, 4rem);
+                font-weight: 800;
+                letter-spacing: 0.02em;
+                position: relative;
+                display: inline-block;
 
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        bottom: -10px;
-                        left: 0;
-                        right: 0;
-                        height: 4px;
-                        background: linear-gradient(90deg, transparent, $orange, transparent);
-                        border-radius: 2px;
-                        box-shadow: 0 0 20px rgba($orange, 0.6);
-                    }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    right: 0;
+                    height: 4px;
+                    background: linear-gradient(
+                        90deg,
+                        transparent,
+                        $orange,
+                        transparent
+                    );
+                    border-radius: 2px;
+                    box-shadow: 0 0 20px rgba($orange, 0.6);
+                }
 
-                    span {
-                        background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: 15%));
-                        -webkit-background-clip: text;
-                        background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        font-weight: 300;
-                        filter: drop-shadow(0 0 15px rgba($orange, 0.4));
-                    }
+                span {
+                    background: linear-gradient(
+                        135deg,
+                        $orange,
+                        color.scale($orange, $lightness: 15%)
+                    );
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-weight: 300;
+                    filter: drop-shadow(0 0 15px rgba($orange, 0.4));
                 }
             }
         }
@@ -97,13 +104,13 @@
         gap: 3rem;
         padding: 0 1.5rem;
     }
-    
-    .left {
+
+    &__left {
         display: flex;
         flex-direction: column;
         gap: 3rem;
-        
-        .details {
+
+        &__details {
             background: rgba($offblue, 0.4);
             padding: 2rem;
             border-radius: 12px;
@@ -116,19 +123,19 @@
                 box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
                 border-color: rgba($orange, 0.5);
             }
-            
+
             .icon {
                 color: $orange;
                 display: flex;
                 justify-content: center;
                 margin-bottom: 1rem;
-                
+
                 svg {
                     width: 32px;
                     height: 32px;
                 }
             }
-            
+
             .contact_form__title {
                 color: white;
                 font-size: 1.5rem;
@@ -137,9 +144,13 @@
                 margin-bottom: 0.5rem;
                 text-align: center;
             }
-            
+
             .contact_form__reveal-btn {
-                background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: -20%));
+                background: linear-gradient(
+                    135deg,
+                    $orange,
+                    color.scale($orange, $lightness: -20%)
+                );
                 border: none;
                 border-radius: 8px;
                 color: white;
@@ -153,18 +164,22 @@
                 box-shadow: 0 4px 15px rgba($orange, 0.3);
                 margin: 0 auto;
                 display: block;
-                
+
                 &:hover {
                     transform: translateY(-2px);
                     box-shadow: 0 6px 20px rgba($orange, 0.5);
-                    background: linear-gradient(135deg, color.scale($orange, $lightness: 5%), $orange);
+                    background: linear-gradient(
+                        135deg,
+                        color.scale($orange, $lightness: 5%),
+                        $orange
+                    );
                 }
-                
+
                 &:active {
                     transform: translateY(0);
                 }
             }
-            
+
             .contact_form__detail {
                 color: $offwhite;
                 font-size: 1rem;
@@ -174,7 +189,7 @@
             }
         }
     }
-    
+
     .right {
         background: rgba($offblue, 0.4);
         padding: 3rem;
@@ -200,7 +215,7 @@
                 gap: 1rem;
             }
 
-            .form-group {
+            &__group {
                 border: none;
                 padding: 0;
                 margin: 0;
@@ -224,60 +239,64 @@
                     white-space: nowrap;
                     border-width: 0;
                 }
-            }
-            
-            .form-div {
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-                width: 100%;
-                
-                .form-label {
-                    color: white;
-                    font-size: 1rem;
-                    font-weight: 500;
-                    letter-spacing: 0.5px;
-                }
-                
-                .form-controller {
-                    background: rgba($blue, 0.6);
-                    border: 2px solid rgba($grey, 0.2);
-                    border-radius: 8px;
-                    padding: 0.75rem 1rem;
-                    outline: none;
+
+                &__section {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
                     width: 100%;
-                    box-sizing: border-box;
-                    color: $offwhite;
-                    font-size: 1rem;
-                    transition: all 0.3s ease;
-                    
-                    &::placeholder {
-                        color: rgba($grey, 0.6);
+
+                    &__label {
+                        color: white;
+                        font-size: 1rem;
+                        font-weight: 500;
+                        letter-spacing: 0.5px;
                     }
-                    
-                    &:hover {
-                        border-color: rgba($orange, 0.4);
-                    }
-                    
-                    &:focus {
-                        border-color: $orange;
-                        box-shadow: 0 0 0 3px rgba($orange, 0.1);
-                        background: rgba($blue, 0.8);
+
+                    &__controller {
+                        background: rgba($blue, 0.6);
+                        border: 2px solid rgba($grey, 0.2);
+                        border-radius: 8px;
+                        padding: 0.75rem 1rem;
+                        outline: none;
+                        width: 100%;
+                        box-sizing: border-box;
+                        color: $offwhite;
+                        font-size: 1rem;
+                        transition: all 0.3s ease;
+
+                        &--message {
+                            font-size: 1rem;
+                            resize: vertical;
+                            min-height: 150px;
+                            font-family: inherit;
+                        }
+
+                        &::placeholder {
+                            color: rgba($grey, 0.6);
+                        }
+
+                        &:hover {
+                            border-color: rgba($orange, 0.4);
+                        }
+
+                        &:focus {
+                            border-color: $orange;
+                            box-shadow: 0 0 0 3px rgba($orange, 0.1);
+                            background: rgba($blue, 0.8);
+                        }
                     }
                 }
-                
-                .message {
-                    font-size: 1rem;
-                    resize: vertical;
-                    min-height: 150px;
-                    font-family: inherit;
-                }
-                
-                .btn {
+
+                &__btn {
                     padding: 1rem 2rem;
                     width: 100%;
                     box-sizing: border-box;
-                    background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: -20%));
+                    background: linear-gradient(
+                        135deg,
+                        $orange,
+                        color.scale($orange, $lightness: -20%)
+                    );
                     border: none;
                     border-radius: 8px;
                     color: white;
@@ -289,6 +308,7 @@
                     letter-spacing: 0.5px;
                     box-shadow: 0 4px 15px rgba($orange, 0.3);
                     margin-top: 1rem;
+                    text-align: center;
 
                     @media (width < $mid_breakpoint) {
                         padding: 0.875rem 1.5rem;
@@ -303,11 +323,15 @@
                         letter-spacing: 0.2px;
                         margin-top: 0.25rem;
                     }
-                    
+
                     &:hover {
                         transform: translateY(-2px);
                         box-shadow: 0 6px 20px rgba($orange, 0.5);
-                        background: linear-gradient(135deg, color.scale($orange, $lightness: 5%), $orange);
+                        background: linear-gradient(
+                            135deg,
+                            color.scale($orange, $lightness: 5%),
+                            $orange
+                        );
                     }
 
                     &:active {
