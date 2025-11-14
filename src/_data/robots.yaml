@@ -1,24 +1,61 @@
+# Robotics kids try to be quiet challenge (impossible)
 robots:
-  - name: "Example Robot 2025"
-    year: "2025"
-    image: "/static/img/robots/2025-robot.jpg"
-    description: "Sample Text"
-    achievements:
-      - "Sample Text"
-      - "Sample Text"
-  
-  - name: "Example Robot 2024"
+  - name: "Tango"
     year: "2024"
-    image: "/static/img/robots/2024-robot.jpg"
-    description: "Sample Text"
-    achievements:
-      - "Sample Text"
-      - "Sample Text"
+    image: "/static/img/Robots/2024bot.png"
+    description: "CRESCENDO"
+    achievements: []
   
-  - name: "Example Robot 2023"
+  - name: "Zephyr"
     year: "2023"
-    image: "/static/img/robots/2023-robot.jpg"
-    description: "Sample Text"
-    achievements:
-      - "Sample Text"
-      - "Sample Text"
+    image: "/static/img/Robots/2023bot.jpg"
+    description: "CHARGED UP presented by Haas"
+    achievements: []
+  
+  - name: "Viper"
+    year: "2022"
+    image: "/static/img/Robots/2022bot.jpg"
+    description: "RAPID REACT presented by The Boeing Company"
+    achievements: []
+  
+  - name: "Prowler"
+    year: "2021"
+    image: "/static/img/Robots/2021bot.jpg"
+    description: "Infinite Recharge"
+    achievements: []
+  
+  - name: "Vanguard"
+    year: "2020"
+    image: "/static/img/Robots/2020bot.jpg"
+    description: "INFINITE RECHARGE"
+    achievements: []
+  
+  - name: "Chef"
+    year: "2019"
+    image: "/static/img/Robots/2019bot.jpg"
+    description: "DESTINATION: DEEP SPACE"
+    achievements: []
+  
+  - name: "Flatline"
+    year: "2018"
+    image: "/static/img/Robots/2018bot.jpg"
+    description: "FIRST POWER UP"
+    achievements: []
+  
+  - name: "Flynn Rider"
+    year: "2016"
+    image: "/static/img/Robots/2016bot.jpg"
+    description: "FIRST STRONGHOLD"
+    achievements: []
+  
+  - name: "Phantom"
+    year: "2015"
+    image: "/static/img/Robots/2015bot.jpg"
+    description: "RECYCLE RUSH"
+    achievements: []
+  
+  - name: "Fumper"
+    year: "2014"
+    image: "/static/img/Robots/2014bot.jpg"
+    description: "AERIAL ASSIST"
+    achievements: []
