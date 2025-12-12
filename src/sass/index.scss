@@ -65,10 +65,10 @@
         animation: fadeInUp 1s ease-out;
 
         .subtitle {
-            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            font-size: clamp(1.2rem, 2vw, 1.7rem);
             text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
             margin-bottom: 0.5em;
-            font-weight: 300;
+            font-weight: 400;
             letter-spacing: 0.05em;
             opacity: 0;
             animation: fadeInUp 0.8s ease-out 0.2s forwards;
@@ -113,38 +113,46 @@
 
                 &--blue {
                     color: #00243e;
-                    
+
                     &::before {
-                        content: '';
+                        content: "";
                         position: absolute;
                         inset: -10px;
-                        background: radial-gradient(circle, rgba(0, 36, 62, 0.4) 0%, transparent 70%);
+                        background: radial-gradient(
+                            circle,
+                            rgba(0, 36, 62, 0.4) 0%,
+                            transparent 70%
+                        );
                         filter: blur(15px);
                         opacity: 0;
                         transition: opacity 0.3s ease;
                         z-index: -1;
                     }
                 }
-                
+
                 &--orange {
                     color: #fe5000;
-                    
+
                     &::before {
-                        content: '';
+                        content: "";
                         position: absolute;
                         inset: -10px;
-                        background: radial-gradient(circle, rgba(254, 80, 0, 0.5) 0%, transparent 70%);
+                        background: radial-gradient(
+                            circle,
+                            rgba(254, 80, 0, 0.5) 0%,
+                            transparent 70%
+                        );
                         filter: blur(15px);
                         opacity: 0;
                         transition: opacity 0.3s ease;
                         z-index: -1;
                     }
                 }
-                
+
                 &:hover {
                     transform: scale(1.15) translateY(-3px);
                     text-shadow: 3px 3px 15px rgba(0, 0, 0, 1);
-                    
+
                     &::before {
                         opacity: 1;
                     }
@@ -153,10 +161,10 @@
         }
 
         .typewriter {
-            font-weight: 300;
+            font-weight: 500;
             text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
             margin-top: 1.5em;
-            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            font-size: clamp(1.5rem, 2.3vw, 2rem);
             min-height: 2em;
             opacity: 0;
             animation: fadeInUp 0.8s ease-out 0.6s forwards;
@@ -206,7 +214,8 @@
 }
 
 @keyframes scrollBounce {
-    0%, 100% {
+    0%,
+    100% {
         transform: translate(-50%, 0);
     }
     50% {
@@ -235,7 +244,11 @@
     align-items: center;
 
     &:nth-child(even) {
-        background: linear-gradient(to right, rgba(2, 36, 62, 0.3), transparent);
+        background: linear-gradient(
+            to right,
+            rgba(2, 36, 62, 0.3),
+            transparent
+        );
     }
 
     @media (width < $mid_breakpoint) {
@@ -254,7 +267,11 @@
         font-size: clamp(1.8rem, 3vw, 2.5rem);
         margin-bottom: 1rem;
         font-weight: 700;
-        background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: 15%));
+        background: linear-gradient(
+            135deg,
+            $orange,
+            color.scale($orange, $lightness: 15%)
+        );
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -324,7 +341,8 @@
         }
     }
 
-    &__left, &__right {
+    &__left,
+    &__right {
         @media (width > $mid_breakpoint) {
             max-width: 90%;
             margin: 0 auto;
@@ -345,7 +363,11 @@
 
 .sponsors {
     padding: 4rem 2rem;
-    background: linear-gradient(to bottom, rgba(2, 36, 62, 0.2), rgba(2, 36, 62, 0.4));
+    background: linear-gradient(
+        to bottom,
+        rgba(2, 36, 62, 0.2),
+        rgba(2, 36, 62, 0.4)
+    );
     text-align: center;
 
     @media (width < $mid_breakpoint) {
@@ -359,10 +381,14 @@
     &__title {
         font-size: clamp(2rem, 4vw, 3rem);
         font-weight: 700;
-        font-family: 'Raleway', sans-serif;
+        font-family: "Raleway", sans-serif;
         color: white;
         margin-bottom: 0.5rem;
-        background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: 15%));
+        background: linear-gradient(
+            135deg,
+            $orange,
+            color.scale($orange, $lightness: 15%)
+        );
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -370,7 +396,7 @@
 
     &__subtitle {
         font-size: clamp(1rem, 1.5vw, 1.2rem);
-        font-family: 'Open Sans', sans-serif;
+        font-family: "Open Sans", sans-serif;
         color: rgba(255, 255, 255, 0.85);
         margin-bottom: 3rem;
         text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
