@@ -11,11 +11,23 @@ css: resources.css
     </div>
 </header>
 
-<section class="resources">
-    <div class="resources__container">
+<main class="resources">
+    <aside class="resources__sidenav">
+        <h3 class="resources__sidenav__title">Contents</h3>
+        <ul class="resources__sidenav__list">
+            {% if resources and resources.categories %}
+                {% for category in resources.categories %}
+                    <li class="resources__sidenav__item">
+                        <a href="#{{ category.id }}" class="resources__sidenav__item">{{ category.name }}</a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </aside>
+    <section class="resources__container">
         {% if resources and resources.categories %}
             {% for category in resources.categories %}
-                <div class="resource-category">
+                <div class="resource-category" id="{{ category.id }}">
                     <h2 class="resource-category__title">{{ category.name }}</h2>
                     <p class="resource-category__description">{{ category.description }}</p>
 
@@ -42,5 +54,5 @@ css: resources.css
         {% else %}
             <p style="color: white; text-align: center;">Resources coming soon! Check back later.</p>
         {% endif %}
-    </div>
-</section>
+    </section>
+</main>

@@ -10,24 +10,24 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 * {
-	margin: 0;
+    margin: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	html {
-		interpolate-size: allow-keywords;
-	}
+    html {
+        interpolate-size: allow-keywords;
+    }
 }
 
 body {
-	line-height: 1.5;
-	font-family: "Roboto", system-ui, "sans-serif";
-	-webkit-font-smoothing: antialiased;
-	background-color: $blue;
+    line-height: 1.5;
+    font-family: "Atkinson Hyperlegible Next", system-ui, "sans-serif";
+    -webkit-font-smoothing: antialiased;
+    background-color: $blue;
 }
 
 img,
@@ -35,25 +35,25 @@ picture,
 video,
 canvas,
 svg {
-	display: block;
-	max-width: 100%;
+    display: block;
+    max-width: 100%;
 }
 
 input,
 button,
 textarea,
 select {
-	font: inherit;
+    font: inherit;
 }
 
 button {
-	all: unset;
-	cursor: pointer;
-	
-	&:focus-visible {
-		outline: 2px solid currentColor;
-		outline-offset: 2px;
-	}
+    all: unset;
+    cursor: pointer;
+
+    &:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+    }
 }
 
 p,
@@ -63,11 +63,11 @@ h3,
 h4,
 h5,
 h6 {
-	overflow-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 p {
-	text-wrap: pretty;
+    text-wrap: pretty;
 }
 h1,
 h2,
@@ -75,15 +75,15 @@ h3,
 h4,
 h5,
 h6 {
-	text-wrap: balance;
+    text-wrap: balance;
 }
 
 #root,
 #__next {
-	isolation: isolate;
+    isolation: isolate;
 }
 
 //Global classes
 .orange {
-	color: $orange;
+    color: $orange;
 }

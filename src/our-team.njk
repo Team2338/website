@@ -11,6 +11,28 @@ css: our-team.css
     </div>
 </header>
 
+<section class="team-info">
+    <div class="team-info__container">
+        <h2 class="team-info__title">About Our Team</h2>
+        <p class="team-info__text">Team 2338 - Gear It Forward is a FIRST Robotics Competition team from Oswego, Illinois. We are a student-led team dedicated to building robots, developing skills, and giving back to our community.</p>
+
+        <div class="team-stats">
+            <div class="team-stat">
+                <h3 class="team-stat__number">100+</h3>
+                <p class="team-stat__label">Team Members</p>
+            </div>
+            <div class="team-stat">
+                <h3 class="team-stat__number">17+</h3>
+                <p class="team-stat__label">Years Competing</p>
+            </div>
+            <div class="team-stat">
+                <h3 class="team-stat__number">100+</h3>
+                <p class="team-stat__label">Community Events</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="robots">
     <div class="robots__container">
         <h2 class="robots__title">Our Robots</h2>
@@ -60,28 +82,6 @@ css: our-team.css
             {% for robot in robots.robots %}
                 <button class="carousel__indicator" data-index="{{ loop.index0 }}" aria-label="Go to robot {{ loop.index }}"></button>
             {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="team-info">
-    <div class="team-info__container">
-        <h2 class="team-info__title">About Our Team</h2>
-        <p class="team-info__text">Team 2338 - Gear It Forward is a FIRST Robotics Competition team from Oswego, Illinois. We are a student-led team dedicated to building robots, developing skills, and giving back to our community.</p>
-
-        <div class="team-stats">
-            <div class="team-stat">
-                <h3 class="team-stat__number">50+</h3>
-                <p class="team-stat__label">Team Members</p>
-            </div>
-            <div class="team-stat">
-                <h3 class="team-stat__number">15+</h3>
-                <p class="team-stat__label">Years Competing</p>
-            </div>
-            <div class="team-stat">
-                <h3 class="team-stat__number">100+</h3>
-                <p class="team-stat__label">Community Events</p>
-            </div>
         </div>
     </div>
 </section>
