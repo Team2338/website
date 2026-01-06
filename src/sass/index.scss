@@ -325,6 +325,7 @@
         border: none;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        object-fit: cover;
 
         &:hover {
             transform: translateY(-3px);
@@ -408,18 +409,13 @@
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         gap: 2rem;
         max-width: 1200px;
         margin: 0 auto;
 
-        @media (width < $mid_breakpoint) {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-        }
-
         @media (width < $mobile_breakpoint) {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 1rem;
         }
     }
@@ -460,14 +456,11 @@
     &__logo {
         width: 100%;
         height: auto;
-        max-height: 100px;
+        max-height: 250px;
         object-fit: contain;
         filter: brightness(0.95) grayscale(0.2);
         transition: filter 0.3s ease;
-
-        @media (width < $mobile_breakpoint) {
-            max-height: 80px;
-        }
+        background: white;
     }
 
     &:hover &__logo {

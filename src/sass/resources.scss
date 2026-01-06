@@ -11,7 +11,7 @@
     color: white;
     overflow: hidden;
     margin-bottom: 4rem;
-    background: linear-gradient(135deg, rgba($blue, 0.9), rgba($offblue, 0.8));
+    background: linear-gradient(5deg, rgba($blue, 1), rgba($offblue, 0.5));
 
     @media (width < $mid_breakpoint) {
         padding: 4rem 1.5rem 3rem;
@@ -34,7 +34,11 @@
         font-weight: 800;
         letter-spacing: 0.02em;
         margin-bottom: 1rem;
-        background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: 15%));
+        background: linear-gradient(
+            135deg,
+            $orange,
+            color.scale($orange, $lightness: 15%)
+        );
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -61,10 +65,22 @@
     }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
 .resources {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem 6rem;
+    position: relative;
+
+    @media (width > $mobile_breakpoint) {
+        display: flex;
+        gap: 1em;
+    }
 
     @media (width < $mid_breakpoint) {
         padding: 0 1.5rem 4rem;
@@ -74,10 +90,42 @@
         padding: 0 1rem 3rem;
     }
 
+    &__sidenav {
+        animation: fadeInUp 1s ease-out;
+
+        &__title {
+            color: $orange;
+            // text-align: center;
+        }
+
+        &__list {
+            position: sticky;
+            top: calc($nav_height + 1em);
+            list-style-type: none;
+            font-size: large;
+            padding: 0;
+        }
+
+        &__item {
+            padding-block: 0.4em;
+            transition: color ease-out 0.3s;
+
+            a {
+                color: white;
+                text-decoration: none;
+
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+    }
+
     &__container {
         display: flex;
         flex-direction: column;
         gap: 4rem;
+        flex-grow: 1;
 
         @media (width < $mid_breakpoint) {
             gap: 3rem;
@@ -88,12 +136,22 @@
 .resource-category {
     animation: fadeIn 0.8s ease-out;
 
+    //This is to offset the heading when scrolling with the nav
+    //this value is the same as the navs top property to make them line up
+    --scroll-offset: calc(#{$nav_height} + 1rem);
+    padding-top: var(--scroll-offset);
+    margin-top: calc(var(--scroll-offset) * -1);
+
     &__title {
         font-size: clamp(1.8rem, 3vw, 2.5rem);
         font-weight: 700;
         color: white;
         margin-bottom: 0.5rem;
-        background: linear-gradient(135deg, $orange, color.scale($orange, $lightness: 15%));
+        background: linear-gradient(
+            135deg,
+            $orange,
+            color.scale($orange, $lightness: 15%)
+        );
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -109,11 +167,11 @@
 
 .resource-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 
     @media (width < $mid_breakpoint) {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1.5rem;
     }
 
