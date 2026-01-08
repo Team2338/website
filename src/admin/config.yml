@@ -114,7 +114,7 @@ collections:
                             - label: "Icon"
                               name: "icon"
                               widget: "string"
-                              required: "false"
+                              required: false
           - label: "Outreach"
             name: "outreach"
             file: "src/_data/outreach.yaml"
