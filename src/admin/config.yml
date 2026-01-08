@@ -1,6 +1,6 @@
 # Use DecapBridge classic auth (required)
 backend:
-    name: test-repo
+    name: git-gateway
     repo: team2338/website
     branch: main
     identity_url: https://auth.decapbridge.com/sites/2e37641b-73bb-421e-a27c-7c979976d7f3
