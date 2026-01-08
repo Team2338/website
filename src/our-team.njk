@@ -57,7 +57,7 @@ css: our-team.css
                                 {% if robot.achievements %}
                                     <ul class="carousel__card__achievements">
                                         {% for achievement in robot.achievements %}
-                                            <li>{{ achievement }}</li>
+                                            <li>{{ achievement.description }}</li>
                                         {% endfor %}
                                     </ul>
                                 {% endif %}

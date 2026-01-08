@@ -1,6 +1,6 @@
 # Use DecapBridge classic auth (required)
 backend:
-    name: git-gateway
+    name: test-repo
     repo: team2338/website
     branch: main
     identity_url: https://auth.decapbridge.com/sites/2e37641b-73bb-421e-a27c-7c979976d7f3
@@ -75,6 +75,7 @@ collections:
                   name: "sponsors"
                   widget: "list"
                   label_singular: "Sponsor"
+                  summary: "{{fields.name}}"
                   fields:
                       - { label: "Name", name: "name", widget: "string" }
                       - { label: "Logo", name: "logo", widget: "image" }
@@ -83,28 +84,34 @@ collections:
             name: "resources"
             file: "src/_data/resources.yaml"
             fields:
-                - { label: "Name", name: "name", widget: "string" }
-                - label: "ID"
-                  name: "id"
-                  widget: "string"
-                  hint: "A single word, all lowercase version of the Name"
-                  pattern: ["[a-z]", "Must only contain lowercase letters"]
-                - label: "Description"
-                  name: "description"
-                  widget: "string"
-                - label: "Resources"
-                  name: "items"
+                - label: "Categories"
+                  name: "categories"
                   widget: "list"
-                  label_singular: "Resource"
+                  label_singular: "Category"
+                  summary: "{{fields.name}}"
                   fields:
                       - { label: "Name", name: "name", widget: "string" }
-                      - {
-                            label: "Description",
-                            name: "description",
-                            widget: "string",
-                        }
-                      - { label: "Link", name: "url", widget: "string" }
-                      - { label: "Icon", name: "icon", widget: "string" }
+                      - label: "ID"
+                        name: "id"
+                        widget: "string"
+                        hint: "A single word, all lowercase version of the Name"
+                        pattern:
+                            ["[a-z]", "Must only contain lowercase letters"]
+                      - label: "Description"
+                        name: "description"
+                        widget: "string"
+                      - label: "Resources"
+                        name: "items"
+                        widget: "list"
+                        summary: "{{fields.name}}"
+                        label_singular: "Resource"
+                        fields:
+                            - { label: "Name", name: "name", widget: "string" }
+                            - label: "Description"
+                              name: "description"
+                              widget: "string"
+                            - { label: "Link", name: "url", widget: "string" }
+                            - { label: "Icon", name: "icon", widget: "string" }
           - label: "Outreach"
             name: "outreach"
             file: "src/_data/outreach.yaml"
@@ -113,6 +120,7 @@ collections:
                   name: "initiatives"
                   widget: "list"
                   label_singular: "Initiative"
+                  summary: "{{fields.name}}"
                   fields:
                       - { label: "Name", name: "name", widget: "string" }
                       - { label: "Image", name: "image", widget: "image" }
@@ -120,11 +128,9 @@ collections:
                         name: "alt"
                         widget: "string"
                         hint: "This text shows up when the image fails to load and is read to users with vision related disabilities. It should describe what is in the image."
-                      - {
-                            label: "Description",
-                            name: "paragraph",
-                            widget: "text",
-                        }
+                      - label: "Description"
+                        name: "paragraph"
+                        widget: "text"
           - label: "Robots"
             name: "robots"
             file: "src/_data/robots.yaml"
@@ -133,6 +139,7 @@ collections:
                   name: "robots"
                   widget: "list"
                   label_singular: "Robot"
+                  summary: "{{fields.name}} - {{fields.year}}"
                   fields:
                       - { label: "Name", name: "name", widget: "string" }
                       - label: "Year"
@@ -140,13 +147,15 @@ collections:
                         widget: "string"
                         pattern: ["[0-9]", "Must be a number"]
                       - { label: "Image", name: "image", widget: "image" }
-                      - {
-                            label: "Description",
-                            name: "description",
-                            widget: "string",
-                        }
-                      - {
-                            label: "Acheivements",
-                            name: "achievements",
-                            widget: "string",
-                        }
+                      - label: "Description"
+                        name: "description"
+                        widget: "string"
+                      - label: "Acheivements"
+                        name: "achievements"
+                        label_singular: "Acheivement"
+                        widget: "list"
+                        summary: "{{fields.description}}"
+                        field:
+                            label: "Description"
+                            name: "description"
+                            widget: string
