@@ -68,7 +68,7 @@ collections:
       files:
           - label: "Home"
             name: "home"
-            file: "src/_data/sponsors.yaml"
+            file: "src/_data/home.yaml"
             fields:
                 - {
                       label: "Full Screen Image",
@@ -186,6 +186,7 @@ collections:
                 - label: "Section 1"
                   name: "section_1"
                   widget: "object"
+                  summary: "{{fields.heading}}"
                   fields:
                       - label: "Heading"
                         name: "heading"
@@ -196,7 +197,6 @@ collections:
                         widget: "markdown"
                         buttons: ["bold", "italic"]
                         editor_components: []
-                        hint: "Bold text will appear orange, italics are normal"
                       - label: "Image"
                         name: "img_url"
                         widget: "image"
@@ -238,7 +238,7 @@ collections:
                         name: "subheading"
                         widget: "string"
                 - label: "Section 1"
-                  name: "secetion_1"
+                  name: "section_1"
                   summary: "{{fields.heading}}"
                   widget: "object"
                   fields:
