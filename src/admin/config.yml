@@ -1,0 +1,136 @@
+backend:
+    name: test-repo
+    branch: main # Branch to update (optional; defaults to master)
+media_folder: "src/static/img" # Media files will be stored in the repo under images/uploads
+public_folder: "/static/img"
+site_url: "https://gearitforward.com"
+editor:
+    preview: false
+collections:
+    - name: "setup"
+      label: "Setup"
+      create: false
+      files:
+          - name: "setup"
+            label: "Setup"
+            file: "src/_data/setup.yaml"
+            fields:
+                - label: "Footer"
+                  name: "footer"
+                  widget: "object"
+                  fields:
+                      - label: "Copyright Notice"
+                        name: "copyright"
+                        widget: "string"
+                      - label: "Instagram Link"
+                        name: "instagram"
+                        widget: "string"
+                      - label: "Facebook Link"
+                        name: "facebook"
+                        widget: "string"
+                      - { label: "X Link", name: "x", widget: "string" }
+                      - label: "Youtube Link"
+                        name: "youtube"
+                        widget: "string"
+                      - label: "Github Link"
+                        name: "github"
+                        widget: "string"
+                      - link: "Link"
+                        name: "link"
+                        hint: "This link appears in the right corner of the footer."
+                        widget: "object"
+                        fields:
+                            - label: "Link Text"
+                              name: "text"
+                              widget: "string"
+                            - label: "Link Address"
+                              name: "address"
+                              widget: "string"
+
+    - name: "pages"
+      label: "Pages"
+      create: false
+      files:
+          - label: "Home"
+            name: "home"
+            file: "src/_data/sponsors.yaml"
+            fields:
+                - label: "Sponsors"
+                  name: "sponsors"
+                  widget: "list"
+                  label_singular: "Sponsor"
+                  fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - { label: "Logo", name: "logo", widget: "image" }
+                      - { label: "Link", name: "url", widget: "string" }
+          - label: "Resources"
+            name: "resources"
+            file: "src/_data/resources.yaml"
+            fields:
+                - { label: "Name", name: "name", widget: "string" }
+                - label: "ID"
+                  name: "id"
+                  widget: "string"
+                  hint: "A single word, all lowercase version of the Name"
+                  pattern: ["[a-z]", "Must only contain lowercase letters"]
+                - label: "Description"
+                  name: "description"
+                  widget: "string"
+                - label: "Resources"
+                  name: "items"
+                  widget: "list"
+                  label_singular: "Resource"
+                  fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - {
+                            label: "Description",
+                            name: "description",
+                            widget: "string",
+                        }
+                      - { label: "Link", name: "url", widget: "string" }
+                      - { label: "Icon", name: "icon", widget: "string" }
+          - label: "Outreach"
+            name: "outreach"
+            file: "src/_data/outreach.yaml"
+            fields:
+                - label: "Initiatives"
+                  name: "initiatives"
+                  widget: "list"
+                  label_singular: "Initiative"
+                  fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - { label: "Image", name: "image", widget: "image" }
+                      - label: "Alt Text"
+                        name: "alt"
+                        widget: "string"
+                        hint: "This text shows up when the image fails to load and is read to users with vision related disabilities. It should describe what is in the image."
+                      - {
+                            label: "Description",
+                            name: "paragraph",
+                            widget: "text",
+                        }
+          - label: "Robots"
+            name: "robots"
+            file: "src/_data/robots.yaml"
+            fields:
+                - label: "Robots"
+                  name: "robots"
+                  widget: "list"
+                  label_singular: "Robot"
+                  fields:
+                      - { label: "Name", name: "name", widget: "string" }
+                      - label: "Year"
+                        name: "year"
+                        widget: "string"
+                        pattern: ["[0-9]", "Must be a number"]
+                      - { label: "Image", name: "image", widget: "image" }
+                      - {
+                            label: "Description",
+                            name: "description",
+                            widget: "string",
+                        }
+                      - {
+                            label: "Acheivements",
+                            name: "achievements",
+                            widget: "string",
+                        }
