@@ -1,18 +1,18 @@
 @use "partials/vars" as *;
 @use "sass:color";
 
-.error-page {
+.error_page {
     min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     a {
         color: rgb(250, 249, 246);
         font-weight: 500;
         transition: 0.3s ease;
         text-decoration: underline;
-        
+
         &:hover {
             opacity: 0.8;
         }
@@ -23,7 +23,7 @@
         max-width: 800px;
         padding: 2rem;
     }
-        
+
     &__content {
         display: flex;
         flex-direction: column;
@@ -31,7 +31,7 @@
         align-items: center;
         text-align: center;
     }
-            
+
     &__text-wrapper {
         svg {
             position: absolute;
@@ -40,24 +40,24 @@
             scale: 0.97;
         }
     }
-    
+
     &__title {
         font-size: clamp(2rem, 5vw, 3.5rem);
         color: $offwhite;
         padding: 1vh;
         margin-bottom: 1rem;
-        
+
         span {
             display: inline-block;
         }
     }
-    
+
     &__message {
         font-size: clamp(1rem, 2.5vw, 1.25rem);
         font-weight: 300;
         color: $grey;
         line-height: 2em;
-        
+
         #dad-joke {
             display: block;
             margin-top: 1rem;
@@ -65,24 +65,24 @@
             color: color.scale($grey, $lightness: 10%);
         }
     }
-    
+
     @media (width < $mid_breakpoint) {
         min-height: 70vh;
-        
+
         &__container {
             padding: 1.5rem;
         }
-        
+
         &__title {
             padding: 2vh 1vh;
             margin-top: 1vh;
             margin-bottom: 2vh;
         }
-        
+
         &__message {
             line-height: 1.8em;
             padding: 1vh 0;
-            
+
             br {
                 display: block;
                 content: "";

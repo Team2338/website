@@ -5,84 +5,80 @@ permalink: /our-team/
 css: our-team.css
 ---
 <header class="hero">
-    <div class="hero__content">
-        <h1 class="hero__title">Our Team</h1>
-        <p class="hero__subtitle">Meet the students and mentors behind Gear It Forward</p>
-    </div>
+    <h1 class="hero__title">Our Team</h1>
+    <p class="hero__subtitle">Meet the students and mentors behind Gear It Forward</p>
 </header>
 
-<section class="team-info">
-    <div class="team-info__container">
-        <h2 class="team-info__title">About Our Team</h2>
-        <p class="team-info__text">Team 2338 - Gear It Forward is a FIRST Robotics Competition team from Oswego, Illinois. We are a student-led team dedicated to building robots, developing skills, and giving back to our community.</p>
+<section class="info">
+    <div class="info__container">
+        <h2 class="info__title">About Our Team</h2>
+        <p class="info__text">Team 2338 - Gear It Forward is a FIRST Robotics Competition team from Oswego, Illinois. We are a student-led team dedicated to building robots, developing skills, and giving back to our community.</p>
 
-        <div class="team-stats">
-            <div class="team-stat">
-                <h3 class="team-stat__number">100+</h3>
-                <p class="team-stat__label">Team Members</p>
+        <div class="stats">
+            <div class="stats__item">
+                <h3 class="stats__item__number">100+</h3>
+                <p class="stats__item__label">Team Members</p>
             </div>
-            <div class="team-stat">
-                <h3 class="team-stat__number">17+</h3>
-                <p class="team-stat__label">Years Competing</p>
+            <div class="stats__item">
+                <h3 class="stats__item__number">17+</h3>
+                <p class="stats__item__label">Years Competing</p>
             </div>
-            <div class="team-stat">
-                <h3 class="team-stat__number">100+</h3>
-                <p class="team-stat__label">Community Events</p>
+            <div class="stats__item">
+                <h3 class="stats__item__number">100+</h3>
+                <p class="stats__item__label">Community Events</p>
             </div>
         </div>
     </div>
 </section>
 
 <section class="robots">
-    <div class="robots__container">
-        <h2 class="robots__title">Our Robots</h2>
-        <p class="robots__subtitle">A showcase of our competition robots through the years</p>
+    <h2 class="robots__title">Our Robots</h2>
+    <p class="robots__subtitle">A showcase of our competition robots through the years</p>
 
-        <div class="carousel">
-            <button class="carousel__button carousel__button--prev" aria-label="Previous robot">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
-                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-                </svg>
-            </button>
+    <div class="carousel">
+        <button class="carousel__button carousel__button--prev" aria-label="Previous robot">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+        </button>
 
-            <div class="carousel__track-container">
-                <div class="carousel__track">
-                    {% for robot in robots.robots %}
-                        <div class="carousel__slide">
-                            <div class="robot-card">
-                                <div class="robot-card__image-wrapper">
-                                    <img src="{{ robot.image }}" alt="{{ robot.name }}" class="robot-card__image">
-                                </div>
-                                <div class="robot-card__content">
-                                    <h3 class="robot-card__name">{{ robot.name }}</h3>
-                                    <p class="robot-card__year">{{ robot.year }}</p>
-                                    <p class="robot-card__description">{{ robot.description }}</p>
-                                    {% if robot.achievements %}
-                                        <ul class="robot-card__achievements">
-                                            {% for achievement in robot.achievements %}
-                                                <li>{{ achievement }}</li>
-                                            {% endfor %}
-                                        </ul>
-                                    {% endif %}
-                                </div>
+        <div class="carousel__track-container">
+            <div class="carousel__track">
+                {% for robot in robots.robots %}
+                    <div class="carousel__slide">
+                        <div class="carousel__card">
+                            <div class="carousel__card__image-wrapper">
+                                <img src="{{ robot.image }}" alt="{{ robot.name }}" class="carousel__card__image">
+                            </div>
+                            <div class="carousel__card__content">
+                                <h3 class="carousel__card__name">{{ robot.name }}</h3>
+                                <p class="carousel__card__year">{{ robot.year }}</p>
+                                <p class="carousel__card__description">{{ robot.description }}</p>
+                                {% if robot.achievements %}
+                                    <ul class="carousel__card__achievements">
+                                        {% for achievement in robot.achievements %}
+                                            <li>{{ achievement.description }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
                             </div>
                         </div>
-                    {% endfor %}
-                </div>
+                    </div>
+                {% endfor %}
             </div>
-
-            <button class="carousel__button carousel__button--next" aria-label="Next robot">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
-                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                </svg>
-            </button>
         </div>
 
-        <div class="carousel__indicators">
-            {% for robot in robots.robots %}
-                <button class="carousel__indicator" data-index="{{ loop.index0 }}" aria-label="Go to robot {{ loop.index }}"></button>
-            {% endfor %}
-        </div>
+        <button class="carousel__button carousel__button--next" aria-label="Next robot">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="carousel__indicators">
+        {% for robot in robots.robots %}
+            <button class="carousel__indicator" data-index="{{ loop.index0 }}" aria-label="Go to robot {{ loop.index }}"></button>
+        {% endfor %}
     </div>
 </section>
 

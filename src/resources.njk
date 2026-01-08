@@ -5,10 +5,8 @@ permalink: /resources/
 css: resources.css
 ---
 <header class="hero">
-    <div class="hero__content">
-        <h1 class="hero__title">Resources</h1>
-        <p class="hero__subtitle">Tools, guides, and materials for our team and the FIRST community</p>
-    </div>
+    <h1 class="hero__title">Resources</h1>
+    <p class="hero__subtitle">Tools, guides, and materials for our team and the FIRST community</p>
 </header>
 
 <main class="resources">
@@ -27,14 +25,14 @@ css: resources.css
     <section class="resources__container">
         {% if resources and resources.categories %}
             {% for category in resources.categories %}
-                <div class="resource-category" id="{{ category.id }}">
-                    <h2 class="resource-category__title">{{ category.name }}</h2>
-                    <p class="resource-category__description">{{ category.description }}</p>
+                <div class="category" id="{{ category.id }}">
+                    <h2 class="category__title">{{ category.name }}</h2>
+                    <p class="category__description">{{ category.description }}</p>
 
-                    <div class="resource-grid">
+                    <div class="grid">
                         {% for resource in category.items %}
-                            <a href="{{ resource.url }}" target="_blank" rel="noopener noreferrer" class="resource-card">
-                                <div class="resource-card__icon">
+                            <a href="{{ resource.url }}" target="_blank" rel="noopener noreferrer" class="card">
+                                <div class="card__icon">
                                     {% if resource.icon %}
                                         <img src="{{ resource.icon }}" alt="{{ resource.name }} icon">
                                     {% else %}
@@ -44,8 +42,8 @@ css: resources.css
                                         </svg>
                                     {% endif %}
                                 </div>
-                                <h3 class="resource-card__title">{{ resource.name }}</h3>
-                                <p class="resource-card__description">{{ resource.description }}</p>
+                                <h3 class="card__title">{{ resource.name }}</h3>
+                                <p class="card__description">{{ resource.description }}</p>
                             </a>
                         {% endfor %}
                     </div>

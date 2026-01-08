@@ -6,12 +6,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: 6rem 2rem;
     text-align: center;
     color: white;
     overflow: hidden;
     margin-bottom: 4rem;
     background: linear-gradient(5deg, rgba($blue, 1), rgba($offblue, 0.5));
+    animation: fadeInUp 1s ease-out;
 
     @media (width < $mid_breakpoint) {
         padding: 4rem 1.5rem 3rem;
@@ -21,12 +23,6 @@
     @media (width < $mobile_breakpoint) {
         padding: 3rem 1rem 2rem;
         margin-bottom: 2rem;
-    }
-
-    &__content {
-        position: relative;
-        z-index: 1;
-        animation: fadeInUp 1s ease-out;
     }
 
     &__title {
@@ -79,7 +75,7 @@
 
     @media (width > $mobile_breakpoint) {
         display: flex;
-        gap: 1em;
+        gap: 2em;
     }
 
     @media (width < $mid_breakpoint) {
@@ -90,6 +86,16 @@
         padding: 0 1rem 3rem;
     }
 
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        flex-grow: 1;
+
+        @media (width < $mid_breakpoint) {
+            gap: 3rem;
+        }
+    }
     &__sidenav {
         animation: fadeInUp 1s ease-out;
 
@@ -120,20 +126,9 @@
             }
         }
     }
-
-    &__container {
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
-        flex-grow: 1;
-
-        @media (width < $mid_breakpoint) {
-            gap: 3rem;
-        }
-    }
 }
 
-.resource-category {
+.category {
     animation: fadeIn 0.8s ease-out;
 
     //This is to offset the heading when scrolling with the nav
@@ -165,7 +160,7 @@
     }
 }
 
-.resource-grid {
+.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
@@ -181,7 +176,7 @@
     }
 }
 
-.resource-card {
+.card {
     background: rgba($offblue, 0.4);
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
