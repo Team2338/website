@@ -2,7 +2,7 @@
 backend:
     name: git-gateway
     repo: team2338/website
-    branch: main
+    branch: ch-dev
     identity_url: https://auth.decapbridge.com/sites/2e37641b-73bb-421e-a27c-7c979976d7f3
     gateway_url: https://gateway.decapbridge.com
 
@@ -111,7 +111,10 @@ collections:
                               name: "description"
                               widget: "string"
                             - { label: "Link", name: "url", widget: "string" }
-                            - { label: "Icon", name: "icon", widget: "string" }
+                            - label: "Icon"
+                              name: "icon"
+                              widget: "string"
+                              required: "false"
           - label: "Outreach"
             name: "outreach"
             file: "src/_data/outreach.yaml"
