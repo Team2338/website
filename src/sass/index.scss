@@ -418,6 +418,10 @@
             grid-template-columns: 1fr;
             gap: 1rem;
         }
+
+        :first-child:nth-last-child(odd) {
+            grid-column: 1 / -1;
+        }
     }
 }
 
