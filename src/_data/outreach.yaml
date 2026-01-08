@@ -1,3 +1,13 @@
+hero:
+    heading: "Outreach"
+    subheading: "at Gear It Forward"
+    img_url: "/static/img/IMG_6258.jpg"
+section_1:
+    heading: "What is *Outreach*?"
+    paragraph: "Outreach is one of the great opportunities available on the team. Outreach has an overall job to use our robotics skills to better the community. We have many outreach iniatives detailed below!"
+    img_url: "/static/img/Outreach.jpg"
+    img_alt: ""
+initiatives_heading: "Our *Outreach* Initiatives"
 initiatives:
     - name: C.H.U.C.K.
       image: /static/img/IMG_6258.jpg

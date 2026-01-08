@@ -5,8 +5,8 @@ permalink: /our-team/
 css: our-team.css
 ---
 <header class="hero">
-    <h1 class="hero__title">Our Team</h1>
-    <p class="hero__subtitle">Meet the students and mentors behind Gear It Forward</p>
+    <h1 class="hero__title">{{ our_team.header.heading }}</h1>
+    <p class="hero__subtitle">{{ our_team.header.subheading }}</p>
 </header>
 
 <section class="info">
@@ -15,18 +15,15 @@ css: our-team.css
         <p class="info__text">Team 2338 - Gear It Forward is a FIRST Robotics Competition team from Oswego, Illinois. We are a student-led team dedicated to building robots, developing skills, and giving back to our community.</p>
 
         <div class="stats">
-            <div class="stats__item">
-                <h3 class="stats__item__number">100+</h3>
-                <p class="stats__item__label">Team Members</p>
-            </div>
-            <div class="stats__item">
-                <h3 class="stats__item__number">17+</h3>
-                <p class="stats__item__label">Years Competing</p>
-            </div>
-            <div class="stats__item">
-                <h3 class="stats__item__number">100+</h3>
-                <p class="stats__item__label">Community Events</p>
-            </div>
+            {% for stat in our_team.section_1.stats%}
+                <div class="stats__item">
+                    <h3 class="stats__item__number">{{ stat.number }}</h3>
+                    <p class="stats__item__label">
+                        {{ stat.label }}</p>
+                </div>
+
+            {% endfor %}
+
         </div>
     </div>
 </section>
@@ -44,7 +41,7 @@ css: our-team.css
 
         <div class="carousel__track-container">
             <div class="carousel__track">
-                {% for robot in robots.robots %}
+                {% for robot in our_team.robots %}
                     <div class="carousel__slide">
                         <div class="carousel__card">
                             <div class="carousel__card__image-wrapper">
@@ -76,7 +73,7 @@ css: our-team.css
     </div>
 
     <div class="carousel__indicators">
-        {% for robot in robots.robots %}
+        {% for robot in our_team.robots %}
             <button class="carousel__indicator" data-index="{{ loop.index0 }}" aria-label="Go to robot {{ loop.index }}"></button>
         {% endfor %}
     </div>

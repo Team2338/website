@@ -6,7 +6,7 @@ css: index.css
 {#IMPORTANT!!!!!!!!!!!!!!!!!!#}
 {# ALWAYS SAVE FILE WITHOUT FORMATTING #}
 <header class="hero">
-    <div class="hero__background"></div>
+    <div class="hero__background" style="--background-url: url('{{ home.hero_bg }}')"></div>
     <div class="hero__content">
         <p class="hero__content__subtitle">We are,</p>
         <h1>
@@ -23,23 +23,23 @@ css: index.css
 
     <section class="section">
         <div class="section__left">
-            <h2 class="section__subtitle">What is <em>FIRST</em> & <em>FRC</em>?</h2>
-            <p class="section__text">
-                <b>FIRST</b> is a global robotics community preparing students for the future and is the world's leading youth-serving nonprofit for STEM education. <b>First Robotics Competition</b> combines the excitement of sport with the rigors of science and technology. Students sometimes refer to it as "the hardest fun you'll ever have."
-        </p>
+            <h2 class="section__subtitle">{{home.section_1.heading|md|safe}}</h2>
+            <div class="section__text">
+                {{ home.section_1.paragraph | md | safe}}
+            </div>
         </div>
         <div class="section__right">
-            <img src="/static/img/2023-Comp-Group.jpg" alt="2023 Competition Group" class="section__img">
+            <img src="{{ home.section_1.img_url }}" alt="{{ home.section_1.img_alt }}" class="section__img">
         </div>
     </section>
 
     <section class="section">
         <div class="section__left">
-            <iframe src="https://www.youtube-nocookie.com/embed/L9y0WqW7Js4?si=mj06YqSfjGExvC52" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="section__video"></iframe>
+            <iframe src="{{ home.section_2.youtube_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="section__video"></iframe>
         </div>
         <div class="section__right">
-            <h2 class="section__subtitle">2025 Season</h2>
-            <p class="section__text">Our 2025 bot, Stringray, won two regionals this year and made it to the division finals at the World Championship</p>
+            <h2 class="section__subtitle">{{ home.section_2.heading | md |safe}}</h2>
+            <dev class="section__text">{{ home.section_2.paragraph | md | safe}}</dev>
         </div>
     </section>
 
@@ -47,7 +47,7 @@ css: index.css
         <h2 class="sponsors__title">Our Sponsors</h2>
         <p class="sponsors__subtitle">Thank you to our generous sponsors who make our team possible!</p>
         <div class="sponsors__grid">
-            {% for sponsor in sponsors.sponsors %}
+            {% for sponsor in home.sponsors %}
                 <a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer" class="sponsor-card">
                     <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" class="sponsor-card__logo">
                 </a>

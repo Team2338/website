@@ -1,3 +1,18 @@
+header:
+    heading: "Our Team"
+    subheading: "Learn about our team and robots!"
+section_1:
+    heading: "About Our Team"
+    subheading: "Team 2338 - Gear It Forward is a FIRST Robotics Competition team from Oswego, Illinois. We are a student-led team dedicated to building robots, developing skills, and giving back to our community."
+    stats:
+        - number: "100+"
+          label: "Team Members"
+        - number: "17+"
+          label: "Years Competing"
+        - number: "100+"
+          label: "Community Events"
+robots_heading: "Our robots"
+robots_subheading: "A showcase of our competition robots through the years"
 robots:
     - name: Tango
       year: "2024"
