@@ -6,12 +6,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: 6rem 2rem;
     text-align: center;
     color: white;
     overflow: hidden;
     margin-bottom: 4rem;
     background: linear-gradient(135deg, rgba($blue, 0.9), rgba($offblue, 0.8));
+    animation: fadeInUp 1s ease-out;
 
     @media (width < $mid_breakpoint) {
         padding: 4rem 1.5rem 3rem;
@@ -22,13 +24,6 @@
         padding: 3rem 1rem 2rem;
         margin-bottom: 2rem;
     }
-
-    &__content {
-        position: relative;
-        z-index: 1;
-        animation: fadeInUp 1s ease-out;
-    }
-
     &__title {
         font-size: clamp(2.5rem, 5vw, 4rem);
         font-weight: 800;
@@ -65,28 +60,131 @@
     }
 }
 
+.info {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+    animation: fadeIn 0.8s ease-out;
+
+    @media (width < $mid_breakpoint) {
+        padding: 0 1.5rem 3rem;
+    }
+
+    @media (width < $mobile_breakpoint) {
+        padding: 0 1rem 2rem;
+    }
+
+    &__container {
+        text-align: center;
+    }
+
+    &__title {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        font-weight: 700;
+        color: white;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(
+            135deg,
+            $orange,
+            color.scale($orange, $lightness: 15%)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__text {
+        font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (width < $mobile_breakpoint) {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+
+    @media (width < $mid_breakpoint) {
+        flex-direction: column;
+    }
+
+    * {
+        flex: 1; //Makes all children equal width
+    }
+
+    @media (width < $mobile_breakpoint) {
+        gap: 1.5rem;
+        grid-template-columns: 1fr;
+    }
+
+    &__item {
+        background: rgba($offblue, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+
+        @media (width < $mobile_breakpoint) {
+            padding: 1.5rem;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+            border-color: rgba($orange, 0.5);
+            box-shadow: 0 10px 30px rgba($orange, 0.2);
+        }
+
+        &__number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: $orange;
+            margin-bottom: 0.5rem;
+
+            @media (width < $mobile_breakpoint) {
+                font-size: 2.5rem;
+            }
+        }
+
+        &__label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin: 0;
+
+            @media (width < $mobile_breakpoint) {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
 .robots {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem 6rem;
     text-align: center;
 
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.8s ease-out;
+
     @media (width < $mid_breakpoint) {
         padding: 0 1.5rem 4rem;
+        gap: 3rem;
     }
 
     @media (width < $mobile_breakpoint) {
         padding: 0 1rem 3rem;
-    }
-
-    &__container {
-        display: flex;
-        flex-direction: column;
-        animation: fadeIn 0.8s ease-out;
-
-        @media (width < $mid_breakpoint) {
-            gap: 3rem;
-        }
     }
 
     &__title {
@@ -114,17 +212,6 @@
         @media (width < $mobile_breakpoint) {
             margin-bottom: 1.5rem;
         }
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -240,7 +327,7 @@
     }
 }
 
-.robot-card {
+.carousel__card {
     background: rgba($offblue, 0.4);
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
@@ -347,110 +434,13 @@
     }
 }
 
-.team-info {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem 4rem;
-    animation: fadeIn 0.8s ease-out;
-
-    @media (width < $mid_breakpoint) {
-        padding: 0 1.5rem 3rem;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-
-    @media (width < $mobile_breakpoint) {
-        padding: 0 1rem 2rem;
-    }
-
-    &__container {
-        text-align: center;
-    }
-
-    &__title {
-        font-size: clamp(1.8rem, 3vw, 2.5rem);
-        font-weight: 700;
-        color: white;
-        margin-bottom: 0.5rem;
-        background: linear-gradient(
-            135deg,
-            $orange,
-            color.scale($orange, $lightness: 15%)
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    &__text {
-        font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-        color: rgba(255, 255, 255, 0.7);
-        line-height: 1.6;
-        margin-bottom: 2rem;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-
-        @media (width < $mobile_breakpoint) {
-            margin-bottom: 1.5rem;
-        }
-    }
-}
-
-.team-stats {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-
-    @media (width < $mid_breakpoint) {
-        flex-direction: column;
-    }
-
-    * {
-        flex: 1; //Makes all children equal width
-    }
-
-    @media (width < $mobile_breakpoint) {
-        gap: 1.5rem;
-        grid-template-columns: 1fr;
-    }
-}
-
-.team-stat {
-    background: rgba($offblue, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: all 0.3s ease;
-
-    @media (width < $mobile_breakpoint) {
-        padding: 1.5rem;
-    }
-
-    &:hover {
-        transform: translateY(-5px);
-        border-color: rgba($orange, 0.5);
-        box-shadow: 0 10px 30px rgba($orange, 0.2);
-    }
-
-    &__number {
-        font-size: 3rem;
-        font-weight: 700;
-        color: $orange;
-        margin-bottom: 0.5rem;
-
-        @media (width < $mobile_breakpoint) {
-            font-size: 2.5rem;
-        }
-    }
-
-    &__label {
-        font-size: 1.1rem;
-        color: rgba(255, 255, 255, 0.85);
-        margin: 0;
-
-        @media (width < $mobile_breakpoint) {
-            font-size: 1rem;
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

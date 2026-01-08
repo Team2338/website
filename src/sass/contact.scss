@@ -1,7 +1,7 @@
 @use "partials/vars" as *;
 @use "sass:color";
 
-.intro {
+.hero {
     position: relative;
     display: flex;
     align-items: center;
@@ -11,50 +11,43 @@
     color: white;
     overflow: hidden;
     margin-bottom: 4rem;
+    animation: fadeInUp 1s ease-out;
 
-    .content {
+    h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        letter-spacing: 0.02em;
         position: relative;
-        z-index: 1;
-        animation: fadeInUp 1s ease-out;
+        display: inline-block;
 
-        &__left__wrapper {
-            h1 {
-                font-size: clamp(2.5rem, 5vw, 4rem);
-                font-weight: 800;
-                letter-spacing: 0.02em;
-                position: relative;
-                display: inline-block;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                $orange,
+                transparent
+            );
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba($orange, 0.6);
+        }
 
-                &::after {
-                    content: "";
-                    position: absolute;
-                    bottom: -10px;
-                    left: 0;
-                    right: 0;
-                    height: 4px;
-                    background: linear-gradient(
-                        90deg,
-                        transparent,
-                        $orange,
-                        transparent
-                    );
-                    border-radius: 2px;
-                    box-shadow: 0 0 20px rgba($orange, 0.6);
-                }
-
-                span {
-                    background: linear-gradient(
-                        135deg,
-                        $orange,
-                        color.scale($orange, $lightness: 15%)
-                    );
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    font-weight: 300;
-                    filter: drop-shadow(0 0 15px rgba($orange, 0.4));
-                }
-            }
+        span {
+            background: linear-gradient(
+                135deg,
+                $orange,
+                color.scale($orange, $lightness: 15%)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 300;
+            filter: drop-shadow(0 0 15px rgba($orange, 0.4));
         }
     }
 }
