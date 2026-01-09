@@ -1,7 +1,7 @@
-heading: "Resources"
-subheading: "Tools, guides, and materials for our team and the FIRST community"
+heading: Resources
+subheading: Tools, guides, and materials for our team and the FIRST community
 categories:
-  - name: Programming & Tools
+  - name: "Programming & Tools "
     id: programming
     description: Resources for software development and version control.
     items:
