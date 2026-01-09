@@ -3,27 +3,27 @@ title: Outreach
 layout: base.njk
 css: outreach.css
 ---
-<header class="hero">
+<header class="hero" style="--background: url('{{outreach.hero.img_url}}')">
     <p class="hero__typewriter">
         <span id="typed-text"></span>
         <span id="cursor">|</span>
     </p>
     <script src="/static/js/typewriter-outreach.js" defer></script>
-    <h1 class="hero__title">Outreach</h1>
-    <p class="hero__subtitle">at Gear It Forward</p>
+    <h1 class="hero__title">{{ outreach.hero.heading }}</h1>
+    <p class="hero__subtitle">{{ outreach.hero.subheading }}</p>
 </header>
 <section class="section">
     <div class="section__left">
-        <h1 class="section__title">What is <span class="orange">Outreach</span>?</h1>
-        <p class="section__text">Outreach is one of the great opportunities available on the team. Outreach has an overall job to use our robotics skills to better the community. We have many outreach iniatives detailed below!
-</p>
+        <h1 class="section__title">{{ outreach.section_1.heading | md | safe}}</h1>
+        <p class="section__text">{{ outreach.section_1.paragraph | md | safe }}
+        </p>
     </div>
     <div class="section__right">
-        <img src="/static/img/Outreach/Outreach.jpg" alt="" class="section__img">
+        <img src="{{ outreach.section_1.img_url }}" alt="{{ outreach.section_1.img_alt }}" class="section__img">
     </div>
 </section>
 <section class="initiatives">
-    <h3 class="initiatives__title">Our <span class="orange">Outreach</span> Initiatives</h3>
+    <h3 class="initiatives__title">{{ outreach.initiatives_heading | md | safe }}</h3>
 
     <div class="initiatives__container">
         {% for initiative in outreach.initiatives %}

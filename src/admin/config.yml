@@ -62,15 +62,62 @@ collections:
                             - label: "Link Address"
                               name: "address"
                               widget: "string"
-
     - name: "pages"
       label: "Pages"
       create: false
       files:
           - label: "Home"
             name: "home"
-            file: "src/_data/sponsors.yaml"
+            file: "src/_data/home.yaml"
             fields:
+                - {
+                      label: "Full Screen Image",
+                      name: "hero_bg",
+                      widget: "image",
+                  }
+                - label: "Section 1"
+                  name: "section_1"
+                  widget: "object"
+                  summary: "{{fields.heading}}"
+                  fields:
+                      - label: "Heading"
+                        name: "heading"
+                        widget: "string"
+                        hint: "Text wrapped in double asterisks will appear will a orange glow"
+                      - label: "Paragraph"
+                        name: "paragraph"
+                        widget: "markdown"
+                        buttons: ["bold", "italic"]
+                        editor_components: []
+                        hint: "Bold text will appear orange, italics are normal"
+                      - label: "Image"
+                        name: "img_url"
+                        widget: "image"
+                      - label: "Image Alt Text"
+                        name: "img_alt"
+                        widget: "string"
+                        hint: This text shows up when the image fails to load and is read to users with vision related disabilities. It should describe what is in the image."
+                - label: "Section 2"
+                  name: "section_2"
+                  summary: "{{fields.heading}}"
+                  widget: "object"
+                  fields:
+                      - label: "Heading"
+                        name: "heading"
+                        widget: "string"
+                        hint: "Text wrapped in double asterisks will appear will a orange glow"
+                      - label: "Paragraph"
+                        name: "paragraph"
+                        widget: "markdown"
+                        buttons: ["bold", "italic"]
+                        editor_components: []
+                        hint: "Bold text will appear orange, italics are normal"
+                      - label: "Youtube Embed URL"
+                        name: "youtube_url"
+                        widget: "string"
+                        hint: "This needs to be the embed link. Click share -> embed on youtube. Enable privacy enhanced mode. The link appears in the code where it says src="
+                        pattern:
+                            ["[nocookie]", "Must a no cookie youtube embed"]
                 - label: "Sponsors"
                   name: "sponsors"
                   widget: "list"
@@ -84,6 +131,8 @@ collections:
             name: "resources"
             file: "src/_data/resources.yaml"
             fields:
+                - { label: "Heading", name: "heading", widget: "string" }
+                - { label: "Subheading", name: "subheading", widget: "string" }
                 - label: "Categories"
                   name: "categories"
                   widget: "list"
@@ -119,6 +168,45 @@ collections:
             name: "outreach"
             file: "src/_data/outreach.yaml"
             fields:
+                - label: "Hero"
+                  name: "hero"
+                  widget: "object"
+                  summary: "{{ fields.heading }}"
+                  fields:
+                      - label: "Heading"
+                        name: "heading"
+                        widget: "string"
+                        hint: "Text wrapped in asterisks will be orange"
+                      - label: "Subheading"
+                        name: "subheading"
+                        widget: "string"
+                      - label: "Background Image"
+                        name: "img_url"
+                        widget: "image"
+                - label: "Section 1"
+                  name: "section_1"
+                  widget: "object"
+                  summary: "{{fields.heading}}"
+                  fields:
+                      - label: "Heading"
+                        name: "heading"
+                        widget: "string"
+                        hint: "Text wrapped in double asterisks will appear orange"
+                      - label: "Paragraph"
+                        name: "paragraph"
+                        widget: "markdown"
+                        buttons: ["bold", "italic"]
+                        editor_components: []
+                      - label: "Image"
+                        name: "img_url"
+                        widget: "image"
+                      - label: "Image Alt Text"
+                        name: "img_alt"
+                        widget: "string"
+                - label: "Heading"
+                  name: "initiatives_heading"
+                  widget: "string"
+                  hint: "Text wrapped in asterisks will be orange"
                 - label: "Initiatives"
                   name: "initiatives"
                   widget: "list"
@@ -134,10 +222,51 @@ collections:
                       - label: "Description"
                         name: "paragraph"
                         widget: "text"
-          - label: "Robots"
-            name: "robots"
-            file: "src/_data/robots.yaml"
+          - label: "Our Team"
+            name: "our_team"
+            file: "src/_data/our_team.yaml"
             fields:
+                - label: "Header"
+                  name: "header"
+                  widget: "object"
+                  summary: "{{ fields.heading }}"
+                  fields:
+                      - label: "Heading"
+                        name: "heading"
+                        widget: "string"
+                      - label: "Subheading"
+                        name: "subheading"
+                        widget: "string"
+                - label: "Section 1"
+                  name: "section_1"
+                  summary: "{{fields.heading}}"
+                  widget: "object"
+                  fields:
+                      - label: "Heading"
+                        name: "heading"
+                        widget: "string"
+                      - label: "Subheading"
+                        name: "subheading"
+                        widget: "string"
+                      - label: "Stats"
+                        name: "stats"
+                        widget: "list"
+                        min: 1
+                        max: 4
+                        summary: "{{ fields.label }}"
+                        fields:
+                            - label: "Number"
+                              name: "number"
+                              widget: "string"
+                            - label: "Label"
+                              name: "label"
+                              widget: "string"
+                - label: "Robot Section Heading"
+                  name: "robots_heading"
+                  widget: "string"
+                - label: "Robot Section Subheading"
+                  name: "robots_subheading"
+                  widget: "string"
                 - label: "Robots"
                   name: "robots"
                   widget: "list"

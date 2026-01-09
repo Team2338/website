@@ -24,7 +24,8 @@
     &__background {
         position: absolute;
         inset: 0;
-        background-image: url("/static/img/landing/2025Full-Team.jpg");
+        //This is declared as an inline style to allow it to be configured with the yaml file
+        background-image: var(--background-url);
         background-size: cover;
         background-position: center;
         filter: brightness(0.6);
@@ -288,7 +289,7 @@
         }
     }
 
-    &__text {
+    &__text p {
         line-height: 1.8;
         font-size: clamp(1rem, 1.5vw, 1.2rem);
         color: rgba(255, 255, 255, 0.95);
@@ -298,7 +299,7 @@
             line-height: 1.6;
         }
 
-        b {
+        strong {
             color: $orange;
             font-weight: 600;
         }

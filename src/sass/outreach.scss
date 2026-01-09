@@ -32,7 +32,8 @@
         content: "";
         position: absolute;
         inset: 0;
-        background-image: url("/static/img/Outreach/IMG_6258.jpg");
+        //background is defined inline so it can be controlled by yaml files
+        background-image: var(--background);
         background-size: cover;
         background-position: center;
         z-index: 0;
@@ -162,7 +163,7 @@
         font-weight: 700;
         line-height: 1.2;
 
-        .orange {
+        em {
             background: linear-gradient(
                 135deg,
                 $orange,
@@ -171,6 +172,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            font: inherit;
         }
     }
 
@@ -217,7 +219,7 @@
         font-size: clamp(2rem, 3.5vw, 2.5rem);
         font-weight: 700;
 
-        .orange {
+        em {
             background: linear-gradient(
                 135deg,
                 $orange,
@@ -226,6 +228,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            font: inherit;
         }
     }
 
