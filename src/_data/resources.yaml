@@ -43,6 +43,10 @@ categories:
       - name: CAD Mechanism Examples
         description: Overview of common FRC mechanisms and specific components for CADing.
         url: https://docs.google.com/presentation/d/17WUad3IKdTsnMEZH9WVP70qq3A8WrOhG8aAhIts16Ls/edit?slide=id.p#slide=id.p
+      - name: Electrical Design Activity
+        url: https://docs.google.com/document/d/1plqwNoPbkm3RMriclgZEL3rxIYa2TXk83dxXTk5dED0/edit?tab=t.0
+        description: A fun activity to help your team understand electrical design and
+          the importance of planning.
   - name: Team Leadership & Development
     id: leadership
     description: Leadership development presentations and team coordination guides.
