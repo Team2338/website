@@ -1,32 +1,40 @@
-hero_bg: "/static/img/2025Full-Team.jpg"
+hero_bg: /static/img/2025Full-Team.jpg
 section_1:
-    heading: "What is *FIRST* & *FRC*?"
-    paragraph: '**FIRST** is a global robotics community preparing students for the future and is the world''s leading youth-serving nonprofit for STEM education. __First Robotics Competition__ combines the excitement of sport with the rigors of science and technology. Students sometimes refer to it as "the hardest fun you''ll ever have."'
-    img_url: "/static/img/2023-Comp-Group.jpg"
-    img_alt: "2023 Competition Group"
+  heading: What is *FIRST* & *FRC*?
+  paragraph: "**FIRST** is a global robotics community preparing students for the
+    future and is the world's leading youth-serving nonprofit for STEM
+    education. __First Robotics Competition__ combines the excitement of sport
+    with the rigors of science and technology. Students sometimes refer to it as
+    \"the hardest fun you'll ever have.\""
+  img_url: /static/img/2023-Comp-Group.jpg
+  img_alt: 2023 Competition Group
 section_2:
-    heading: "2025 Season"
-    paragraph: "Our 2025 bot, Stringray, won two regionals this year and made it to the division finals at the World Championship"
-    youtube_url: "https://www.youtube-nocookie.com/embed/L9y0WqW7Js4?si=mj06YqSfjGExvC52"
+  heading: 2025 Season
+  paragraph: Our 2025 bot, Stringray, won two regionals this year and made it to
+    the division finals at the World Championship
+  youtube_url: https://www.youtube-nocookie.com/embed/L9y0WqW7Js4?si=mj06YqSfjGExvC52
 sponsors:
-    - name: "Caterpillar"
-      logo: "/static/img/CATERPILLAR.jpg"
-      url: "https://www.caterpillar.com/"
-    - name: "SD308"
-      logo: "/static/img/SD308.png"
-      url: "https://sd308.org"
-    - name: "Molex"
-      logo: "/static/img/MOLEX.jpg"
-      url: "https://www.molex.com/en-us/home"
-    - name: "TE Connectivity"
-      logo: "/static/img/TE CONNECTIVITY.jpg"
-      url: "https://www.te.com/en/home.html"
-    - name: "Intuitive Foundation"
-      logo: "/static/img/INTUITIVE FOUNDATION.jpg"
-      url: "https://www.intuitive-foundation.org/"
-    - name: "Cargohansa"
-      logo: "/static/img/CARGOHANSA.jpg"
-      url: "https://cargohansa.com/"
-    - name: "GERB"
-      logo: "/static/img/GERB.jpg"
-      url: "https://www.gerb.com/"
+  - name: SD308
+    logo: /static/img/SD308.png
+    url: https://sd308.org
+  - name: Caterpillar
+    logo: /static/img/CATERPILLAR.jpg
+    url: https://www.caterpillar.com/
+  - name: Molex
+    logo: /static/img/MOLEX.jpg
+    url: https://www.molex.com/en-us/home
+  - name: Siemens
+    logo: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbrandslogos.com%2Fwp-content%2Fuploads%2Fimages%2Flarge%2Fsiemens-logo.png&f=1&nofb=1&ipt=9557b1021f3b1d38fd385d1084c69ef7c14783b4bca733af52ad1e4eccd3b98e
+    url: https://www.siemens.com/
+  - name: TE Connectivity
+    logo: /static/img/TE CONNECTIVITY.jpg
+    url: https://www.te.com/en/home.html
+  - name: Clarity
+    logo: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcontent.energage.com%2Fcompany-images%2FSE64660%2FSE64660_logo_orig.png&f=1&nofb=1&ipt=7207e5ec8c9f924e47e494803fc47f62831196e10643befa73208704be239143
+    url: https://clarityinnovates.com/
+  - name: Cargohansa
+    logo: /static/img/CARGOHANSA.jpg
+    url: https://cargohansa.com/
+  - name: GERB
+    logo: /static/img/GERB.jpg
+    url: https://www.gerb.com/
