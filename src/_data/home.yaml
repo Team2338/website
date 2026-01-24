@@ -24,13 +24,13 @@ sponsors:
     logo: /static/img/MOLEX.jpg
     url: https://www.molex.com/en-us/home
   - name: Siemens
-    logo: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbrandslogos.com%2Fwp-content%2Fuploads%2Fimages%2Flarge%2Fsiemens-logo.png&f=1&nofb=1&ipt=9557b1021f3b1d38fd385d1084c69ef7c14783b4bca733af52ad1e4eccd3b98e
+    logo: /static/img/siemens-logo.png
     url: https://www.siemens.com/
   - name: TE Connectivity
     logo: /static/img/TE CONNECTIVITY.jpg
     url: https://www.te.com/en/home.html
   - name: Clarity
-    logo: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcontent.energage.com%2Fcompany-images%2FSE64660%2FSE64660_logo_orig.png&f=1&nofb=1&ipt=7207e5ec8c9f924e47e494803fc47f62831196e10643befa73208704be239143
+    logo: /static/img/clarity.png
     url: https://clarityinnovates.com/
   - name: Cargohansa
     logo: /static/img/CARGOHANSA.jpg
