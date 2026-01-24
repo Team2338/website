@@ -29,10 +29,20 @@ categories:
         description: Mechanical design and assembly principles for robotics systems.
         url: https://tinyurl.com/2338Mechanical
         icon: ""
-      - name: CAD (Design)
-        description: Computer-Aided Design fundamentals and workflow training.
-        url: https://tinyurl.com/2338CadTrain
+      - name: CAD 101
+        description: Computer-Aided Design basics and how to download Inventor.
+        url: https://docs.google.com/presentation/d/1iyBlvlwo9A_vSxhdwlUeMDQ_vRuMXYAlhy1AoN47o0Y/edit?slide=id.p#slide=id.p
         icon: ""
+      - name: CAD 102
+        description: Overview of basic assembly tools, mechanisms, and start of research
+          project.
+        url: https://docs.google.com/presentation/d/1EFy939hIGtvjpxZDOfCQoTng5tPhfh4MYH2YIJyqz3g/edit?slide=id.g38388b4c09f_0_0#slide=id.g38388b4c09f_0_0
+      - name: CAD 201
+        url: https://docs.google.com/presentation/d/1lL8U4S7kBkraco761jgb0rCA_FG-EeETza98UDSizYo/edit?slide=id.p#slide=id.p
+        description: Starting and refining mechanical designs & prototyping.
+      - name: CAD Mechanism Examples
+        description: Overview of common FRC mechanisms and specific components for CADing.
+        url: https://docs.google.com/presentation/d/17WUad3IKdTsnMEZH9WVP70qq3A8WrOhG8aAhIts16Ls/edit?slide=id.p#slide=id.p
   - name: Team Leadership & Development
     id: leadership
     description: Leadership development presentations and team coordination guides.
