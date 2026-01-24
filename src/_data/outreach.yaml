@@ -1,35 +1,58 @@
 hero:
-    heading: "Outreach"
-    subheading: "at Gear It Forward"
-    img_url: "/static/img/IMG_6258.jpg"
+  heading: Outreach
+  subheading: at Gear It Forward
+  img_url: /static/img/IMG_6258.jpg
 section_1:
-    heading: "What is *Outreach*?"
-    paragraph: "Outreach is one of the great opportunities available on the team. Outreach has an overall job to use our robotics skills to better the community. We have many outreach iniatives detailed below!"
-    img_url: "/static/img/Outreach.jpg"
-    img_alt: ""
-initiatives_heading: "Our *Outreach* Initiatives"
+  heading: What is *Outreach*?
+  paragraph: Outreach is one of the great opportunities available on the team.
+    Outreach has an overall job to use our robotics skills to better the
+    community. We have many outreach iniatives detailed below!
+  img_url: /static/img/Outreach.jpg
+  img_alt: Group of team members with Adaptive Toys in front of them on a table
+initiatives_heading: Our *Outreach* Initiatives
 initiatives:
-    - name: C.H.U.C.K.
-      image: /static/img/IMG_6258.jpg
-      alt: "Congressman Bill Foster with a group of 2338 Students delivering a CHUCK"
-      paragraph: "Our Community Helping Utility Companion for Kickball is a device that we developed to increase equity in adaptive PE classes for students with limited mobility."
-    - name: "Adaptive Toys"
-      image: /static/img/Outreach.jpg
-      alt: "A group of 2338 students standing behind a table of adaptive toys"
-      paragraph: "We adapt toys by soldering an easy-press button onto them to provide equity and inclusivity to students with limited mobility."
-    - name: "STEM Kits"
-      image: /static/img/2024StemKits.jpg
-      alt: Gear it Forward students assembling STEM Kits
-      paragraph: "Supplying Hand-on Science to English Language Learner students at Title I Schools. If you are interested in sponsoring our efforts to provide hands-on science to young kids, please [contact us](/contact)."
-    - name: "Girls Who Stem"
-      image: /static/img/gwhostem.jpg
-      alt: "A group of girls at one of Gear It Forward's Girl's Who Stem meetings"
-      paragraph: "We host monthly meetings that empower girls in FIRST and support them as they mentor the younger generation of STEM leaders."
-    - name: "Girl Scout Workshop"
-      image: /static/img/jacker.jpg
-      alt: "A group of girl scouts attending 2338's Girl Scout Workshop:"
-      paragraph: "Introducing local girl scouts grades 3-5 to STEM and FIRST Robotics by teaching skills such as using hand tools, power tools, driving the robot, and educating them about available FLL programs."
-    - name: "Winter Stem Camp"
-      image: /static/img/morestuff.jpg
-      alt: "Young girls participating in the Gear it Forward Winter STEM Camp"
-      paragraph: "Introducing girls grades 6-8 to STEM and FIRST Lego League by hosting them at our shop and providing mentorship."
+  - name: C.H.U.C.K.
+    image: /static/img/IMG_6258.jpg
+    alt: Congressman Bill Foster with a group of 2338 Students delivering a CHUCK
+    paragraph: "Our Community Helping Utility Companion for Kickball is a device
+      that we developed to increase equity in adaptive PE classes for students
+      with limited mobility. It allows students to roll a ball down a ramp,
+      launching it into play. Each CHUCK costs $500 to produce, but we have
+      produced 9 and sent 6 to schools for FREE. "
+  - name: Adaptive Toys
+    image: /static/img/Outreach.jpg
+    alt: A group of 2338 students standing behind a table of adaptive toys
+    paragraph: We adapt toys by soldering an easy-press button onto them to provide
+      equity and inclusivity to students with limited mobility.
+  - name: STEM Kits
+    image: /static/img/2024StemKits.jpg
+    alt: Gear it Forward students assembling STEM Kits
+    paragraph: Our team supplies Hands-on Science STEM Kits to English Language
+      Learner students at Title I Schools. Some of the schools we supply to are
+      Boulder Hill and Long Beach Elementary Schools. Some of our STEM Kits
+      include Lava Lamps, Inflating Balloon, and Catapult. If you are interested
+      in sponsoring our efforts to provide hands-on science to young kids,
+      please 2338frc@sd308.org or fill out this Google form
+      (https://forms.gle/sLNyYazqZ6ipvP929).
+  - name: Girls Who Stem
+    image: /static/img/gwhostem.jpg
+    alt: A group of girls at one of Gear It Forward's Girl's Who Stem meetings
+    paragraph: We host monthly meetings that empower girls in FIRST and support them
+      as they mentor the younger generation of STEM leaders.
+  - name: Girl Scout Workshop
+    image: /static/img/jacker.jpg
+    alt: "A group of girl scouts attending 2338's Girl Scout Workshop:"
+    paragraph: Introducing local girl scouts grades 3-5 to STEM and FIRST Robotics
+      by teaching skills such as using hand tools, power tools, driving the
+      robot, and educating them about available FLL programs.
+  - name: Winter Stem Camp
+    image: /static/img/morestuff.jpg
+    alt: Young girls participating in the Gear it Forward Winter STEM Camp
+    paragraph: Introducing girls grades 6-8 to STEM and FIRST Lego League by hosting
+      them at our shop and providing mentorship.
+  - name: Open Gyms & STEM Nights
+    image: /static/img/dsc09611.jpg
+    alt: "Elementary kid interacting with Garrett (team mascot) "
+    paragraph: "Our team visits other elementary and middle schools around the area
+      with our CHUCK, Robot, STEM Kits, and Awards. By doing this, we inspire
+      younger kids to pursue their interests in STEM fields. "
