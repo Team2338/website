@@ -18,7 +18,7 @@ categories:
     description: Technical presentations covering mechanical and electrical systems.
     items:
       - name: Electrical and Pneumatic
-        description: Overview of electrical systems and pneumatics for robotics.
+        description: Overview of electrical systems and pneumatics for FRC robotics.
         url: https://docs.google.com/presentation/d/1HYbSzJrBvdjYJ2S8QwWiOgc_tgNuMuAkefVzj-gHFo4/edit?usp=sharing
         icon: ""
       - name: CNC and 3D Printing
