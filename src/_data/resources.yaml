@@ -37,29 +37,26 @@ categories:
     id: leadership
     description: Leadership development presentations and team coordination guides.
     items:
-      - name: Leading Forward Team 2338
-        description: Core leadership philosophy and values presentation.
-        url: https://tinyurl.com/2338Leader
-        icon: ""
       - name: "2338 University: Intro to Leadership"
         description: Introduction to leadership roles and team dynamics.
-        url: https://tinyurl.com/2338ULeadership
+        url: https://docs.google.com/presentation/d/1oo5htUP7A7gJuVIUl7eEU_LfcejmD1OVWH1OC6LlPuw/edit?usp=sharing
         icon: ""
-      - name: "2338 University: Democratic Leadership"
-        description: Explores inclusive and participatory leadership styles.
-        url: https://tinyurl.com/2338UDemocratic
+      - name: "2338 University: Instruction"
+        description: Explores teaching and learning styles as well as question answering.
+        url: https://docs.google.com/presentation/d/14D7C7Uvg18vXbFAFqxJu28kyNlBmiCYjJorV8d1EHTk/edit?usp=sharing
         icon: ""
-      - name: "2338 University: Facilitate Leadership"
-        description: Focus on guiding teams effectively through communication.
-        url: https://tinyurl.com/2338UFacilitate
+      - name: "2338 University: Delegation & Time Management"
+        description: Explores how to develop plans, set clear expectations, and delegate
+          all while keeping people engaged.
+        url: https://docs.google.com/presentation/d/1Mh4zvbmYHLSO2Dj2loP5cbZkdsHed2wBYbxBSE4tl7M/edit?usp=sharing
         icon: ""
-      - name: "2338 University: Situational Leadership"
-        description: Adapting leadership styles based on context and team needs.
-        url: https://tinyurl.com/2338USituation
+      - name: "2338 University: Conflict Resolution"
+        description: Explores common causes and resolutions to conflict.
+        url: https://docs.google.com/presentation/d/1Z3Pm7Cdh8xZYhnfEeeYiDGDNKK2b8UD2Q4HyNQ3aAqg/edit?usp=sharing
         icon: ""
-      - name: "2338 University: Wrap Up"
-        description: Summary and reflection on leadership concepts.
-        url: https://tinyurl.com/2338UWrap
+      - name: "2338 University: Interpersonal Skills"
+        description: Discussion on how leaders work well with others.
+        url: https://docs.google.com/presentation/d/1_u8gTinI8kOEdwrbVCc0cW8pYSDTftKKhUqcJ6A8QWo/edit?usp=sharing
         icon: ""
   - name: Outreach & Communication
     id: outreach
