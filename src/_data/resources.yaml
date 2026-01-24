@@ -66,14 +66,6 @@ categories:
         description: Document for contacting and engaging public representatives.
         url: https://tinyurl.com/2338Represent
         icon: ""
-  - name: Game Resources
-    id: game
-    description: Official FIRST Robotics Competition materials and guides.
-    items:
-      - name: "FRC 2024: Crescendo Game Manual"
-        description: Official rulebook and gameplay details for FRC 2024.
-        url: https://tinyurl.com/CrecendoGameManual
-        icon: ""
   - name: STEM Kit Tutorials
     id: stem-kits
     description: Video tutorials on building and programming STEM kits.
