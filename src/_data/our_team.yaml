@@ -16,6 +16,10 @@ section_1:
 robots_heading: Our robots
 robots_subheading: A showcase of our competition robots through the years
 robots:
+  - name: Cerberus
+    year: "2026"
+    description: REBUILT
+    image: https://robertweekley.smugmug.com/Client-Files/FIRST-Robotics/FRC/Miami-Valley-Regional/2026-Rebuilt/2026-Miami-Valley-Regional/i-SDvZp5D/A
   - name: Stingray
     year: "2025"
     image: https://drive.google.com/file/d/1H18eZkibLECUvlEbdocgXgyAGayzSu29/view?usp=drive_link
