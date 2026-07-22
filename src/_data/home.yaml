@@ -6,12 +6,14 @@ section_1:
     education. __First Robotics Competition__ combines the excitement of sport
     with the rigors of science and technology. Students sometimes refer to it as
     \"the hardest fun you'll ever have.\""
-  img_url: /static/img/2023-Comp-Group.jpg
-  img_alt: 2023 Competition Group
+  img_url: /static/img/dsc01047.jpg
+  img_alt: "2026 Miami Valley "
 section_2:
-  heading: 2025 Season
-  paragraph: Our 2025 bot, Stingray, won two regionals this year and made it to
-    the division finals at the World Championship
+  heading: "2026"
+  paragraph: Our 2026 robot, **Cerberus**, won both the Midwest and Miami Valley
+    Regionals and reached a peak ranking of 2nd in Illinois. A triple-laned
+    shooter, the robot excelled throughout the REBUILT season, consistently
+    performing at a high level in qualification and playoff matches.
   youtube_url: https://www.youtube-nocookie.com/embed/L9y0WqW7Js4?si=mj06YqSfjGExvC52
 sponsors:
   - name: SD308
