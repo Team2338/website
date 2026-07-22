@@ -11,36 +11,61 @@ section_1:
       label: Team Members
     - number: "20"
       label: Years Competing
+    - label: Rookie Year
+      number: "2008"
     - number: 100+
       label: Community Events
-robots_heading: Our robots
+robots_heading: Our Robots
 robots_subheading: A showcase of our competition robots through the years
 robots:
   - name: Cerberus
     year: "2026"
     description: REBUILT
     image: https://robertweekley.smugmug.com/Client-Files/FIRST-Robotics/FRC/Miami-Valley-Regional/2026-Rebuilt/2026-Miami-Valley-Regional/i-SDvZp5D/A
+    achievements:
+      - FIRST Championship Daly Division Engineering Inspiration Award
+      - Miami Valley Regional Winner
+      - Midwest Regional Winner
+      - Midwest Regional Engineering Inspiration Award
   - name: Stingray
     year: "2025"
     image: https://drive.google.com/file/d/1H18eZkibLECUvlEbdocgXgyAGayzSu29/view?usp=drive_link
     description: REEFSCAPE
+    achievements:
+      - FIRST Championship Archimedes Division Finalist
+      - Midwest Regional Winner
+      - Midwest Regional Excellence in Engineering Award
+      - Rocket City Regional Winner
+      - Rocket City Regional FIRST Dean's List Finalist Award (Caleb H)
+      - Rocket City Regional Autonomous Award
   - name: Tango
     year: "2024"
     image: /static/img/2024bot.png
     description: CRESCENDO
-    achievements: []
+    achievements:
+      - Midwest Regional Winner
+      - Midwest Regional Excellence in Engineering Award
+      - Central Illinois Regional Finalist
+      - Central Illinois Regional Engineering Inspiration Award
   - name: Zephyr
     year: "2023"
     image: /static/img/2023bot.jpg
-    description: CHARGED UP presented by Haas
+    description: CHARGED UP
+    achievements:
+      - FIRST Championship Hopper Division Finalist
+      - Seven Rivers Regional Engineering Inspiration Award
+      - Seven Rivers Regional Winner
+      - Seven Rivers Regional Engineering Inspiration Award
+      - Midwest Regional FIRST Impact Award
+      - Midwest Regional FIRST Dean's List Finalist Award (Hannah R)
   - name: Viper
     year: "2022"
     image: /static/img/2022bot.jpg
-    description: RAPID REACT presented by The Boeing Company
+    description: RAPID REACT
   - name: Prowler
     year: "2021"
     image: /static/img/2021bot.jpg
-    description: Infinite Recharge
+    description: INFINITE RECHARGE
   - name: Vanguard
     year: "2020"
     image: /static/img/2020bot.jpg
