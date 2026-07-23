@@ -62,6 +62,11 @@ robots:
     year: "2022"
     image: /static/img/2022bot.jpg
     description: RAPID REACT
+    achievements:
+      - Midwest Regional Winner
+      - Midwest Regional FIRST Dean's List Finalist Award (Kyran S)
+      - Midwest Regional Quality Award
+      - Central Illinois Regional Chairman's Award
   - name: Prowler
     year: "2021"
     image: /static/img/2021bot.jpg
