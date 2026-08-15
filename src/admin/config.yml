@@ -19,7 +19,7 @@ backend:
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 media_folder: "src/static/img" # Media files will be stored in the repo under images/uploads
 public_folder: "/static/img"
-site_url: "https://gearitforward.com"
+site_url: "https://team.gearitforward.com"
 editor:
     preview: false
 collections:
