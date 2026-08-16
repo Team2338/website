@@ -21,7 +21,7 @@ robots:
   - name: Cerberus
     year: "2026"
     description: REBUILT
-    image: https://robertweekley.smugmug.com/Client-Files/FIRST-Robotics/FRC/Miami-Valley-Regional/2026-Rebuilt/2026-Miami-Valley-Regional/i-SDvZp5D/A
+    image: /static/img/2026bot.jpg
     achievements:
       - FIRST Championship Daly Division Engineering Inspiration Award
       - Miami Valley Regional Winner
@@ -29,7 +29,7 @@ robots:
       - Midwest Regional Engineering Inspiration Award
   - name: Stingray
     year: "2025"
-    image: https://drive.google.com/file/d/1H18eZkibLECUvlEbdocgXgyAGayzSu29/view?usp=drive_link
+    image: /static/img/2025bot.jpg
     description: REEFSCAPE
     achievements:
       - FIRST Championship Archimedes Division Finalist
