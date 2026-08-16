@@ -14,11 +14,7 @@ section_2:
     Regionals and reached a peak ranking of 2nd in Illinois. A triple-laned
     shooter, the robot excelled throughout the REBUILT season, consistently
     performing at a high level in qualification and playoff matches.
-  youtube_url: <iframe width="560" height="315"
-    src="https://www.youtube-nocookie.com/embed/CQzc4fx9JeQ?si=36PaQGM6a2bn1ORx"
-    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
-    clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  youtube_url: https://www.youtube-nocookie.com/embed/CQzc4fx9JeQ?si=36PaQGM6a2bn1ORx
 sponsors:
   - name: SD308
     logo: /static/img/SD308.png
